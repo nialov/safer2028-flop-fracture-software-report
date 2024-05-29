@@ -54,7 +54,7 @@
                 lib.attrValues {
                   inherit (p)
                     typer jsonschema tomli ipython jinja2 j2cli jupyterlab
-                    pandas openpyxl tabulate pandoc-xnos;
+                    pandas openpyxl tabulate;
                 });
 
             };
@@ -81,6 +81,7 @@
             '';
           };
           inherit (pkgs.python3Packages) pandoc-xnos;
+          inherit (pkgs) pandoc-fignos;
         };
 
         pre-commit = {
