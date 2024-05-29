@@ -1,0 +1,84 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "input_data": {
+      "type": "string"
+    },
+    "interface": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "outputs": {
+      "type": "string"
+    },
+    "remarks": {
+      "type": "string"
+    },
+    "capabilities": {
+      "type": "object",
+      "properties": {
+        "based_on_documentation": {
+          "type": "string"
+        },
+        "based_on_testing": {
+          "type": "string"
+        }
+      },
+      "required": ["based_on_documentation", "based_on_testing"]
+    },
+    "state_of_documentation": {
+      "type": "object",
+      "properties": {
+        "examples": {
+          "type": "string"
+        },
+        "installation": {
+          "type": "string"
+        },
+        "usage": {
+          "type": "string"
+        }
+      },
+      "required": ["examples", "installation", "usage"]
+    },
+    "url": {
+      "type": "object",
+      "properties": {
+        "forum": {
+          "type": "string"
+        },
+        "reference": {
+          "type": "string"
+        },
+        "repository": {
+          "type": "string"
+        },
+        "documentation": {
+          "type": "string"
+        }
+      },
+      "required": ["forum", "reference", "repository", "documentation"]
+    }
+  },
+  "required": [
+    "authors",
+    "input_data",
+    "interface",
+    "name",
+    "outputs",
+    "remarks",
+    "capabilities",
+    "state_of_documentation",
+    "url",
+    "license"
+  ]
+}

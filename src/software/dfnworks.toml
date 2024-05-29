@@ -1,0 +1,127 @@
+name = "dfnWorks"
+authors = [
+    "Jeffrey Hyman",
+    "Satish Karra",
+    "Nataliia Makedonska",
+    "Daniel Livingston",
+]
+interface = "Python code"
+input_data = """
+For the generation of fracture networks (`DFNgen`) dfnworks accepts a number of
+geometric parameters. The length distribution type i.e. truncated power-law
+(Figure @fig:dfnworks_power_law_dfn_mesh_20240521), lognormal, exponential and
+constant can be defined and the relevant parameters can be given e.g. alpha
+(~exponent) for truncated power-law. A P32 value can be given that will be used
+to define the stop condition for the fracture network generation.
+
+![DFN, generated with `dfnWorks`, with truncated power law distributed
+fractures. Image from `dfnWorks` [@hyman_dfnworks_2015]
+documentation.](src/images/dfnworks_power_law_dfn_mesh_20240521.png){#fig:dfnworks_power_law_dfn_mesh_20240521}
+"""
+outputs = """
+dfnworks usses `LaGriT` (<https://lagrit.lanl.gov/>) for meshing the results of
+DFN generation into outputs that are suitable for use with `FEHM` and
+`PFLOTRAN`. `dfnworks` can conduct flow and transport modelling using these two
+software. Outputs of these include `vtk` files.
+"""
+remarks = """
+The utility of the suite is very evident from the number of publications using
+it (<https://dfnworks.lanl.gov/publications.html>). It is part of the *GDSA
+Framework Software* [@sevougian_gdsa_nodate]
+collection of software for deep geological repository modelling.
+"""
+license = "LGPL-3.0-only"
+
+[url]
+repository = "https://github.com/lanl/dfnWorks"
+documentation = "https://dfnworks.lanl.gov/index_docs.html"
+reference = "https://doi.org/10.1016/j.cageo.2015.08.001"
+forum = "https://groups.google.com/d/forum/dfnworks-users"
+
+[state_of_documentation]
+installation = """
+Installation instructions are given for Docker and native Linux installation (for Ubuntu).
+"""
+usage = """
+Usage instructions consists of example cases
+(<https://dfnworks.lanl.gov/examples.html>) and example code alongside the user
+documentation. See below for a part of a code example of using `dfnWorks` with
+Python code.
+
+~~~python
+# Contents of driver.py
+...
+
+DFN = DFNWORKS(jobname,
+               dfnFlow_file=dfnFlow_file,
+               dfnTrans_file=dfnTrans_file,
+               ncpu=8)
+
+...
+
+DFN.add_user_fract(shape='rect',
+                   radii=.6,
+                   translation=[0.4, 0, -0.2],
+                   normal_vector=[0, 0, 1],
+                   permeability=1.0e-12)
+
+...
+DFN.create_network()
+DFN.mesh_network()
+
+DFN.dfn_flow()
+DFN.dfn_trans()
+~~~
+
+To subsequently run the `driver.py` file from the command-line:
+
+~~~bash
+python driver.py
+~~~
+
+"""
+examples = """
+The repository contains an `examples` folder with multiple code examples of
+use. Some of these are explained further in the official documentation. These
+examples vary from "simple" user-defined geometry inspection to flow,
+contaminant and reactive transport modelling. These provide a starting point
+for new users to start configuring their own models as they can be used as
+guidance on how to configure `dfnWorks` modelling for different scenarios.
+
+In the documentation, example applications are given that explain uses of
+`dfnWorks` in real life applications of carbon dioxide sequestration, shale
+energy extraction and nuclear waste repository investigation, where e.g.
+contaminant transport must be modelled (Figure
+@fig:dfnworks_forsmark_trajectories_20240521). The examples include references
+to scientific publications and reports where the investigations are described
+further.
+
+![Particle trajectories modelled with `dfnWorks` at Forsmark, Sweden. Image
+from `dfnWorks`
+documentation.](src/images/dfnworks_forsmark_trajectories_20240521.png){#fig:dfnworks_forsmark_trajectories_20240521}
+"""
+
+[capabilities]
+based_on_documentation = """
+The suite consists of modules that target different stages of fracture and flow
+modelling. `dfnGen` is used to create DFNs, `dfnFlow` is used to model flow
+transport within the generated DFNs and, lastly, `dfnTrans` is used for
+particle/contaminant transport modelling. Furthermore, minor modules include
+`dfnGraph`, which is responsible for modelling the graph of a DFN and used in
+e.g. subsequent pipe network modelling. Altogether, the suite seems very
+extensive in terms of features. `dfnWorks` is capable of defining the backbone
+of a fracture network based on the connectivity i.e. by pruning fractures that
+are not connected to any others. This is demonstrated in the code examples
+within a `pruning` directory.
+
+The documentation directly mentions example applications in carbon dioxide
+sequestration, shale energy extraction and nuclear waste management. For
+sequestration, `dfnworks` provides multiphase simulations of flow and reactive
+transport. For shale energy extraction using fracking, `dfnworks` was used to
+physically model the process. In nuclear waste management, the generation of
+DFNs and consequent contaminant transport modelling is possible with
+`dfnworks`.
+"""
+based_on_testing = """
+
+"""

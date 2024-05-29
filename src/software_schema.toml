@@ -1,0 +1,19 @@
+[[schema]]
+Heading = "Info"
+Description = "General links for further info on software alongside author and interface info."
+
+[[schema]]
+Heading = "Data"
+Description = "Explanation of the input and output data the software uses and outputs"
+
+[[schema]]
+Heading = "Documentation"
+Description = "A review of the documentation included with the software for the purposes of installation, practical use and examples"
+
+[[schema]]
+Heading = "Capabilities"
+Description = "Capabilities of the software based on source code, documentation and reference article."
+
+[[schema]]
+Heading = "Remarks"
+Description = "Miscellaneous additional info on the software."

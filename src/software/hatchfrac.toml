@@ -1,0 +1,80 @@
+name = "hatchfrac"
+authors = [
+    "Weiwei Zhu",
+    "Siarhei Khirevich",
+    "Tadeusz W. Patzek",
+]
+interface = "C++ and Matlab code"
+input_data = """
+The parameters for fracture generation are defined in the C++ code by the
+user. For length distributions of the fractures power-law distribution options
+are best documented. 
+"""
+outputs = """
+Matlab code is provided to plot the results. Furthermore, the results are
+outputted as text files containing fracture coordinates and cluster labels.
+"""
+remarks = """
+The software mainly aligns itself as being a faster alternative to the ADFNE
+software by Alghalandis. This is achieved by using C++ instead of Matlab.
+However, use of C++ makes interacting with the software more complex. It is
+mentioned that the code is not user-friendly and only meant to demonstrate how
+to solve the scientific problems for the purposes of a journal article.
+Furthermore, the included README.txt files included in the source code
+directory state that only a "part of the HatchFrac code" has been made
+available. Lack of full code base and license makes further use of `HatchFrac`
+very difficult.
+
+The capability to grow fractures to have real abutments against other fractures
+is the main attraction of this software (Figure
+@fig:hatchfrac_termination_sketch).
+
+![Sketch illustrating the algorithm to control fracture growth in `hatchfrac`
+using abutments to prior fractures. Image from
+@zhu_hatchfrac_2022.](src/images/hatchfrac_termination_sketch.jpg){#fig:hatchfrac_termination_sketch}
+"""
+license = "Unknown"
+
+[url]
+repository = "https://data.mendeley.com/datasets/zhs97tsdry/1"
+documentation = ""
+reference = "https://doi.org/10.1016/j.compgeo.2022.104917"
+forum = ""
+
+[state_of_documentation]
+installation = """
+Limited instructions are given for installing in the Visual Studio 2017
+environment on Windows.
+"""
+usage = """
+No practical usage instructions are given with the exception of short
+`README.txt` files included with the examples.
+"""
+examples = """
+The reference journal article contains scientific examples of usage: 
+
+~~~
+"1. generate 3D discrete fracture networks and check their clusters; 
+2. mimic the fracture growth process in a rule-based format;"
+~~~
+
+However, running the examples is only supported in a "Visual Studio 2017"
+environment and limited further instructions are given on how to e.g. further
+develop the examples.
+"""
+
+[capabilities]
+based_on_documentation = """
+In the reference journal article, the scientific applicability of the software
+is demonstrated for fracture generation in 2D and 3D (Figure @fig:) and for percolation, fracture intensity and flow and connectivity
+analysis. The examples included with the
+source code demonstrate 3D-DFN generation and fracture growth "in a rule-based
+format".
+
+![3D fracture networks, generated with `hatchfrac`, where in the left subfigure
+network the centers of the fractures follow a "fractal spatial density" whereas
+in the right subfigure they are uniformly distributed. Image from
+@zhu_hatchfrac_2022.](src/images/hatchfrac_3d_fracture_networks.jpg)
+"""
+based_on_testing = """
+"""

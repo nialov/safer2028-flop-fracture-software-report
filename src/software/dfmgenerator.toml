@@ -1,0 +1,82 @@
+name = "DFM Generator"
+authors = ["Michael Welsch", "Mikael Lüthje"]
+interface = "Command-line"
+input_data = """
+The model is defined using plain text configuration files. The variables that
+the user can (and must) define are grid geometry, stress state, fracture
+aperture and calculation controls such as fracture sets and types of fracturing
+used, Mode I and/or Mode II.
+"""
+outputs = """
+The output are in plain text files. Two output formats for the
+text are provided, a custom ASCII format and FAB format, which can
+be loaded in e.g. Fracman.
+"""
+remarks = """
+The use of custom and complex text files for input and output make configuring
+the software very cumbersome. On the other hand, text files are universally
+readable and writable, making using the software accessible for all, in theory.
+Due to using a dynamic fracture growth model, the output models are probably
+more geologically realistic than more static fracture generators. The
+installation, and subsequent testing, is easy on Windows due to the authors
+providing a standalone executable. The concepts implemented in the software are
+introduced in Welch et al., 2020. The software is receiving updates with
+the latest in 2024.
+
+Welch, M.J., Lüthje, M., Oldfield, S.J., 2020. Modelling the Evolution of Natural Fracture Networks: Methods for Simulating the Nucleation, Propagation and Interaction of Layer-Bound Fractures. Springer International Publishing, Cham. https://doi.org/10.1007/978-3-030-52414-2
+"""
+license = "Apache-2.0"
+
+[url]
+repository = "https://github.com/JointFlow/DFMGenerator"
+reference = "https://doi.org/10.5281/zenodo.8066608"
+forum = "https://github.com/JointFlow/DFMGenerator/issues"
+documentation = "https://github.com/JointFlow/DFMGenerator/tree/main/Documentation"
+
+[state_of_documentation]
+installation = """
+Installation instructions are found on the main documentation page for Windows.
+Installation is done by either compiling from the source code or by downloading a
+standalone executable (DFMGenerator.exe), available on GitHub.
+"""
+usage = """
+The user guide provides instructions on running the software from the command-line
+and on writing the input text files.
+
+Initial run of the `DFMGenerator.exe` executable creates template file(s)
+which can then be configured in plain text. This file can then be
+used as the first argument for the executable.
+"""
+examples = """
+The repository contains a `Test_models` folder in
+`DFMGenerator_StandaloneProgram` with test models which are documented in the
+user guide.
+
+These examples include modelling circular microfracture growth, effect of
+different kinds of stress fields on fracture growth and modelling strike-slip
+fracture network network creation, among other examples. Excel spreadsheets
+are provided which can be used to plot the results of the different examples.
+
+Running the examples is done by passing the path to the input text file of the
+example as the first argument of the `DFMGenerator.exe` executable:
+
+~~~
+.\\DFMGenerator.exe .\\Test_models\\TestModelA_Microfractures.txt
+~~~
+"""
+
+[capabilities]
+based_on_documentation = """
+The purpose is to generate geologically realistic models of fracture networks.
+It achieves this by using a dynamic model, where fractures can interact with
+each other during growth and e.g. stop growing as a fracture reaches another.
+This is in contrast to more static modelling where fractures are grown without
+regard for each other.
+
+The options for input and model parametrization are more advanced when using
+the software within *Petrel*, a geomodelling package from SLB (formerly
+Schlumberger). There it complements the fracture modelling tools already
+present in the package.
+"""
+based_on_testing = """
+"""
