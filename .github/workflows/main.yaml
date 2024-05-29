@@ -1,0 +1,60 @@
+on:
+  push:
+
+jobs:
+  nix:
+    strategy:
+      matrix:
+        platform: [ubuntu-latest]
+    runs-on: ${{ matrix.platform }}
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@v9
+      - uses: DeterminateSystems/magic-nix-cache-action@v4
+      - uses: cachix/cachix-action@v13
+        with:
+          name: nialov
+      - name: Check with nix
+        run: |
+          nix flake check
+
+  docs:
+    if: >
+      github.event_name == 'push'
+      && startsWith(github.ref, 'refs/heads/master')
+    needs: [nix]
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    concurrency:
+      group: "pages"
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: DeterminateSystems/nix-installer-action@v9
+      - uses: DeterminateSystems/magic-nix-cache-action@v4
+      - uses: cachix/cachix-action@v13
+        with:
+          name: nialov
+      - name: Build documentation
+        run: |
+          nix run .#build
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload folder with static docs
+          path: "outputs/safer2028-flop-fracture-software-report/html/"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: report
+          path: |
+            outputs/safer2028-flop-fracture-software-report/report.pdf
+            outputs/safer2028-flop-fracture-software-report/report.docx
+      # - uses: actions/configure-pages@v5
+      # - id: deployment
+      #   uses: actions/deploy-pages@v4

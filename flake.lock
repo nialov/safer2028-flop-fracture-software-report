@@ -695,6 +695,22 @@
         "type": "github"
       }
     },
+    "easy-pandoc-templates": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1675640480,
+        "narHash": "sha256-AjxQ+EPnhepHKVy0cLvbPTQg0lPcS1dxF59UXxw0dR8=",
+        "owner": "ryangrose",
+        "repo": "easy-pandoc-templates",
+        "rev": "80d5aa611ceaee12cd55ac344a1e19cfb7781d14",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ryangrose",
+        "repo": "easy-pandoc-templates",
+        "type": "github"
+      }
+    },
     "fehm-src": {
       "flake": false,
       "locked": {
@@ -4052,6 +4068,7 @@
     },
     "root": {
       "inputs": {
+        "easy-pandoc-templates": "easy-pandoc-templates",
         "flake-parts": [
           "nix-extra",
           "flake-parts"

@@ -82,7 +82,7 @@
             name = "build";
             runtimeInputs = self'.devShells.default.nativeBuildInputs;
             text = ''
-              python3 scripts/create_report.py
+              python3 scripts/create_report.py --html-template-path=${inputs.easy-pandoc-templates}/html/easy_template.html
             '';
           };
           inherit (pkgs.python3Packages) pandoc-xnos;
@@ -100,7 +100,10 @@
             statix.enable = true;
             deadnix.enable = true;
             rstcheck.enable = true;
-            yamllint = { enable = true; };
+            yamllint = {
+              enable = true;
+              raw = { args = lib.mkBefore [ "-d" "relaxed" ]; };
+            };
             commitizen.enable = true;
             ruff = { enable = true; };
           };

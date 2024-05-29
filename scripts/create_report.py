@@ -1,6 +1,8 @@
+import shutil
 import subprocess
 from functools import partial
 from pathlib import Path
+from typing import Optional
 
 import pandas as pd
 import tomli
@@ -18,6 +20,7 @@ REPORT_YAML_NAME = REPORT_TEMPLATE_NAME.replace(".md", ".yaml")
 DEFAULT_OUTPUT_NAME = Path(REPORT_TEMPLATE_NAME).stem
 DEFAULT_OUTPUT_DIR_PATH = Path("outputs/safer2028-flop-fracture-software-report/")
 DEFAULT_SOFTWARE_TOML_DIR_PATH = Path("src/software/")
+DEFAULT_IMAGES_PATH = Path("src/images")
 
 
 def _render_section(
@@ -72,6 +75,8 @@ def main(
     report_yaml_name: str = typer.Option(REPORT_YAML_NAME),
     templates_dir_path: Path = typer.Option(DEFAULT_TEMPLATES_DIR_PATH),
     bibliography_path: Path = typer.Option(DEFAULT_BIBLIOGRAPHY_PATH),
+    images_path: Path = typer.Option(DEFAULT_IMAGES_PATH),
+    html_template_path: Optional[Path] = typer.Option(None),
 ):
     env = Environment(
         loader=loaders.FileSystemLoader(templates_dir_path),
@@ -109,7 +114,7 @@ def main(
 
     output_dir_path.mkdir(exist_ok=True, parents=True)
 
-    for extension in ("html", "pdf", "docx"):
+    for extension in ("pdf", "docx"):
 
         output_path = output_dir_path / f"{output_name}.{extension}"
 
@@ -135,6 +140,41 @@ def main(
             check=True,
             capture_output=False,
         )
+
+    output_path = output_dir_path / "html" / "index.html"
+    output_path.parent.mkdir(exist_ok=True)
+
+    typer.echo("Converting markdown to html")
+    typer.echo(f"Writing output html to {output_path}")
+    cmd = [
+        "pandoc",
+        "--from",
+        "markdown",
+        "--to",
+        "html",
+        "--filter",
+        "pandoc-xnos",
+        "--biblio",
+        str(bibliography_path),
+        "--citeproc",
+        "--output",
+        str(output_path),
+        "--toc",
+    ]
+    if html_template_path is not None:
+        cmd.extend(["--template", str(html_template_path)])
+    subprocess.run(
+        cmd,
+        input=formatted_template_with_header,
+        text=True,
+        check=True,
+        capture_output=False,
+    )
+    images_output_path = output_path.parent / "src"
+    if images_output_path.is_dir():
+        shutil.rmtree(images_output_path)
+    images_output_path.mkdir(exist_ok=True)
+    shutil.copytree(src=images_path, dst=(images_output_path / images_path.name))
 
 
 if __name__ == "__main__":
