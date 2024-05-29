@@ -25,11 +25,6 @@
                               "sha256-j6xaFXo3jtXGPL58aIp8RTqeQZhJ8cVKL/iUbUhXBF0=";
                           })
                         ];
-                        # postPatch = ''
-                        #   substituteInPlace pandocxnos/core.py \
-                        #       --replace-fail "'Cannot understand pandocversion=%s'%pandocversion" \
-                        #       "f'{pandocversion} & {pattern}'"
-                        # '';
 
                       });
                   })
@@ -55,7 +50,12 @@
                 fd parallel toml2json miniserve watchexec pandoc pandoc-fignos
                 pandoc-eqnos pandoc-secnos pandoc-tablenos gdal;
               inherit (pkgs.texlive.combined) scheme-medium;
-              inherit (self'.packages) python3WithPackages;
+              python3WithPackages = pkgs.python3.withPackages (p:
+                lib.attrValues {
+                  inherit (p)
+                    typer jsonschema tomli ipython jinja2 j2cli jupyterlab
+                    pandas openpyxl tabulate pandoc-xnos;
+                });
 
             };
             shellHook = config.pre-commit.installationScript + ''
@@ -68,24 +68,18 @@
         packages = {
           validate = pkgs.writeShellApplication {
             name = "validate";
-            runtimeInputs = self'.devShells.default.nativeBuildInputs;
+            runtimeInputs = self'.devShells.default.buildInputs;
             text = ''
               fd --extension toml . ./task_5_report | parallel "python3 ./task_5_report/validate_schema.py {}"
             '';
           };
           build = pkgs.writeShellApplication {
             name = "build";
-            runtimeInputs = self'.devShells.default.nativeBuildInputs;
+            runtimeInputs = self'.devShells.default.buildInputs;
             text = ''
-              ${self'.packages.python3WithPackages}/bin/python3 scripts/create_report.py --html-template-path=${inputs.easy-pandoc-templates}/html/easy_template.html
+              python3 scripts/create_report.py --html-template-path=${inputs.easy-pandoc-templates}/html/easy_template.html
             '';
           };
-          python3WithPackages = pkgs.python3.withPackages (p:
-            lib.attrValues {
-              inherit (p)
-                typer jsonschema tomli ipython jinja2 j2cli jupyterlab pandas
-                openpyxl tabulate;
-            });
           inherit (pkgs.python3Packages) pandoc-xnos;
         };
 
