@@ -55,12 +55,7 @@
                 fd parallel toml2json miniserve watchexec pandoc pandoc-fignos
                 pandoc-eqnos pandoc-secnos pandoc-tablenos gdal;
               inherit (pkgs.texlive.combined) scheme-medium;
-              python3WithPackages = pkgs.python3.withPackages (p:
-                lib.attrValues {
-                  inherit (p)
-                    typer jsonschema tomli ipython jinja2 j2cli jupyterlab
-                    pandas openpyxl tabulate;
-                });
+              inherit (self'.packages) python3WithPackages;
 
             };
             shellHook = config.pre-commit.installationScript + ''
@@ -82,9 +77,15 @@
             name = "build";
             runtimeInputs = self'.devShells.default.nativeBuildInputs;
             text = ''
-              python3 scripts/create_report.py --html-template-path=${inputs.easy-pandoc-templates}/html/easy_template.html
+              ${self'.packages.python3WithPackages}/bin/python3 scripts/create_report.py --html-template-path=${inputs.easy-pandoc-templates}/html/easy_template.html
             '';
           };
+          python3WithPackages = pkgs.python3.withPackages (p:
+            lib.attrValues {
+              inherit (p)
+                typer jsonschema tomli ipython jinja2 j2cli jupyterlab pandas
+                openpyxl tabulate;
+            });
           inherit (pkgs.python3Packages) pandoc-xnos;
         };
 
