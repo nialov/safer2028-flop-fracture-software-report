@@ -6,7 +6,7 @@ interface = "Matlab code"
 input_data = """
 The parameters for fracture generation are defined in the Matlab code by the
 user and include e.g. aperture or an aperture field function and definition of
-fracture sets (Fig. @fig:adfne_dfn_3d_two_sets):
+fracture sets (Figure @fig:adfne_dfn_3d_two_sets):
 
 ~~~matlab
 set1 = Field(DFN('dim',3,'n',100,'dir',15,'ddir',-1e9,'minl',0.05,... % DFN set 1
