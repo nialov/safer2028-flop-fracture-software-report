@@ -19,8 +19,8 @@ As seen in the above code, the input arguments include defining statistical
 constraints for the length.
 """
 outputs = """
-Frackit can output data in *a number of standard CAD file formats readable by
-OpenCASCADE* (`.brep`) and `Gmsh` (`.geo`). Furthermore, the documentation
+Frackit can output data in "a number of standard CAD file formats readable by
+OpenCASCADE" (`.brep`) and `Gmsh` (`.geo`). Furthermore, the documentation
 highlights the possibility of using the output data in conjunction with
 `DuMuX` [@flemisch_dumux_2011], a software for flow and transport modelling in porous media (Figure @fig:frackit_with_other_software).
 
@@ -56,9 +56,9 @@ instructions are also given for Docker.
 usage = """
 Usage instructions mostly consists of example cases, such as
 <https://git.iws.uni-stuttgart.de/dumux-pub/glaeser2020a>. In the *General
-Concept* section it is mentioned that *Frackit does not prescribe a certain
+Concept* section it is mentioned that "Frackit does not prescribe a certain
 program flow, instead, users are motivated to implement their own applications
-using the provided functions, classes and concepts*.
+using the provided functions, classes and concepts".
 """
 examples = """
 The repository contains an `appl` folder with multiple examples of use using the

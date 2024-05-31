@@ -15,12 +15,12 @@ Matlab code is provided to plot the results. Furthermore, the results are
 outputted as text files containing fracture coordinates and cluster labels.
 """
 remarks = """
-The software mainly aligns itself as being a faster alternative to the ADFNE
-software by Alghalandis. This is achieved by using C++ instead of Matlab.
+The software mainly aligns itself as being a faster alternative to the `ADFNE`
+software [@fadakar_alghalandis_adfne_2017]. This is achieved by using C++ instead of Matlab.
 However, use of C++ makes interacting with the software more complex. It is
 mentioned that the code is not user-friendly and only meant to demonstrate how
 to solve the scientific problems for the purposes of a journal article.
-Furthermore, the included README.txt files included in the source code
+Furthermore, the included `README.txt` files included in the source code
 directory state that only a "part of the HatchFrac code" has been made
 available. Lack of full code base and license makes further use of `HatchFrac`
 very difficult.
@@ -66,15 +66,15 @@ develop the examples.
 [capabilities]
 based_on_documentation = """
 In the reference journal article, the scientific applicability of the software
-is demonstrated for fracture generation in 2D and 3D (Figure @fig:) and for percolation, fracture intensity and flow and connectivity
-analysis. The examples included with the
-source code demonstrate 3D-DFN generation and fracture growth "in a rule-based
-format".
+is demonstrated for fracture generation in 2D and 3D (Figure
+@fig:hatchfrac_3d_fracture_networks) and for percolation, fracture intensity
+and flow and connectivity analysis. The examples included with the source code
+demonstrate 3D-DFN generation and fracture growth "in a rule-based format".
 
 ![3D fracture networks, generated with `hatchfrac`, where in the left subfigure
 network the centers of the fractures follow a "fractal spatial density" whereas
 in the right subfigure they are uniformly distributed. Image from
-@zhu_hatchfrac_2022.](src/images/hatchfrac_3d_fracture_networks.jpg)
+@zhu_hatchfrac_2022.](src/images/hatchfrac_3d_fracture_networks.jpg){#fig:hatchfrac_3d_fracture_networks}
 """
 based_on_testing = """
 """

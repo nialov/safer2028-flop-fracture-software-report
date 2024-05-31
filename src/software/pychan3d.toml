@@ -6,8 +6,10 @@ authors = [
 ]
 interface = "Python code"
 input_data = """
+Definition of geometries in code.
 """
 outputs = """
+Modelling outputs can be saved in `vtk` format for viewing with e.g. `Paraview` software.
 """
 remarks = """
 Primarily a flow and solute transport library but designed with the channel
