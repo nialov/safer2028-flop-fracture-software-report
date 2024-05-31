@@ -20,10 +20,8 @@ Due to using a dynamic fracture growth model, the output models are probably
 more geologically realistic than more static fracture generators. The
 installation, and subsequent testing, is easy on Windows due to the authors
 providing a standalone executable. The concepts implemented in the software are
-introduced in Welch et al., 2020. The software is receiving updates with
+introduced in @welch_modelling_2020. The software is receiving updates with
 the latest in 2024.
-
-Welch, M.J., Lüthje, M., Oldfield, S.J., 2020. Modelling the Evolution of Natural Fracture Networks: Methods for Simulating the Nucleation, Propagation and Interaction of Layer-Bound Fractures. Springer International Publishing, Cham. https://doi.org/10.1007/978-3-030-52414-2
 """
 license = "Apache-2.0"
 
