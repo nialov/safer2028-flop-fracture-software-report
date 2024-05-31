@@ -21,6 +21,7 @@ DEFAULT_OUTPUT_NAME = Path(REPORT_TEMPLATE_NAME).stem
 DEFAULT_OUTPUT_DIR_PATH = Path("outputs/safer2028-flop-fracture-software-report/")
 DEFAULT_SOFTWARE_TOML_DIR_PATH = Path("src/software/")
 DEFAULT_IMAGES_PATH = Path("src/images")
+DEFAULT_CSL_PATH = Path("src/journal-of-structural-geology.csl")
 
 
 def _render_section(
@@ -61,6 +62,32 @@ def create_software_schema_table():
     return df
 
 
+def format_pandoc_cmd(
+    extension: str, bibliography_path: Path, output_path: Path, csl_path: Path
+):
+    cmd = [
+        "pandoc",
+        "--from",
+        "markdown",
+        "--to",
+        extension,
+        "--filter",
+        "pandoc-fignos",
+        "--filter",
+        "pandoc-tablenos",
+        "--biblio",
+        str(bibliography_path),
+        "--citeproc",
+        "--output",
+        str(output_path),
+        "--toc",
+        "--csl",
+        str(csl_path),
+    ]
+
+    return cmd
+
+
 @APP.command()
 def main(
     software_toml_dir_path: Path = typer.Option(
@@ -77,6 +104,7 @@ def main(
     bibliography_path: Path = typer.Option(DEFAULT_BIBLIOGRAPHY_PATH),
     images_path: Path = typer.Option(DEFAULT_IMAGES_PATH),
     html_template_path: Optional[Path] = typer.Option(None),
+    csl_path: Path = typer.Option(DEFAULT_CSL_PATH),
 ):
     env = Environment(
         loader=loaders.FileSystemLoader(templates_dir_path),
@@ -114,29 +142,21 @@ def main(
 
     output_dir_path.mkdir(exist_ok=True, parents=True)
 
+    format_pandoc_cmd_with_defaults = partial(
+        format_pandoc_cmd, bibliography_path=bibliography_path, csl_path=csl_path
+    )
+
     for extension in ("pdf", "docx"):
 
         output_path = output_dir_path / f"{output_name}.{extension}"
 
         typer.echo(f"Converting markdown to {extension}")
         typer.echo(f"Writing output {extension} to {output_path}")
+        cmd = format_pandoc_cmd_with_defaults(
+            extension=extension, output_path=output_path
+        )
         subprocess.run(
-            [
-                "pandoc",
-                "--from",
-                "markdown",
-                "--to",
-                extension,
-                "--filter",
-                "pandoc-fignos",
-                "--filter",
-                "pandoc-tablenos",
-                "--biblio",
-                str(bibliography_path),
-                "--citeproc",
-                "--output",
-                str(output_path),
-            ],
+            cmd,
             input=formatted_template_with_header,
             text=True,
             check=True,
@@ -148,23 +168,7 @@ def main(
 
     typer.echo("Converting markdown to html")
     typer.echo(f"Writing output html to {output_path}")
-    cmd = [
-        "pandoc",
-        "--from",
-        "markdown",
-        "--to",
-        "html",
-        "--filter",
-        "pandoc-fignos",
-        "--filter",
-        "pandoc-tablenos",
-        "--biblio",
-        str(bibliography_path),
-        "--citeproc",
-        "--output",
-        str(output_path),
-        "--toc",
-    ]
+    cmd = format_pandoc_cmd_with_defaults(extension="html", output_path=output_path)
     if html_template_path is not None:
         cmd.extend(["--template", str(html_template_path)])
     subprocess.run(
