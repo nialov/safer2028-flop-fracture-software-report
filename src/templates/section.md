@@ -17,15 +17,25 @@ Authors:
 
 ### Data 
 
+#### Input data
+
 {{ input_data }}
+
+#### Outputs
 
 {{ outputs }}
 
 ### Documentation
 
+#### Installation
+
 {{ state_of_documentation.installation }}
 
+#### Usage
+
 {{ state_of_documentation.usage }}
+
+#### Examples
 
 {{ state_of_documentation.examples }}
 
