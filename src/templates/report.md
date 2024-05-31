@@ -106,29 +106,29 @@ or in bedrock groundwater resource management.
 
 # Software
 
-An overview of the collected metadata and information on each software is presented
-in Table @tbl:software_schema_table.
-In the reviewed software, varying input data options are available. Often a set
-of input variables, such as length distribution variables, fracture orientation
-set information and intensities can be inputted rather than directly inputting
-geometric fracture data. 
+An overview of the collected metadata and information on each software is
+presented in Table @tbl:software_schema_table. In the reviewed software,
+varying input data options are available. Often a set of input variables, such
+as length distribution variables, fracture orientation set information and
+intensities can be inputted rather than directly inputting geometric fracture
+data. 
 
 {{ software_schema_table }}
 : Schema of the collected information for each software. {\#tbl:software_schema_table}
 
-Most built solutions, e.g. `dfnWorks` [@hyman_dfnworks_2015], make an end-to-end
-solution where e.g. fracture generation is only one part of the solution. This
-kind of approach makes further development of e.g. only fracture generation
-more difficult as it is usually tightly coupled to the rest of the software.
-Some are focused on the singular task of generating three-dimensional fracture
-geometries, and potentially meshing them, such as `frackit`
+Most built solutions, e.g. `dfnWorks` [@hyman_dfnworks_2015], make an
+end-to-end solution where e.g. fracture generation is only one part of the
+solution. This kind of approach makes further development of one part of the
+software, e.g. fracture generation, more difficult as it is usually tightly
+coupled to the rest of the software. Some are focused only on the singular task
+of generating three-dimensional fracture geometries, such as `frackit`
 [@glaser_frackit_2020].
 
 Very few of the software solutions have graphical user interfaces (GUI) and
 interaction usually demands using the command-line or writing code to run the
 solution. Typical non-GUI solutions consist of configuring the model using
 plain text files or actual code and then running the software using
-a command-line. Plain text files can be simpler to create, as they do not
+the command-line. Plain text files can be simpler to create, as they do not
 require specific programming knowledge, but configuring with actual code can
 enable a higher degree of choice in running the software. The choice of
 programming language for a code interface can affect the accessibility, as some
@@ -136,10 +136,6 @@ languages, such as Python, are more widely used and more easily accessible.
 The software itself might be coded in one language but the interface
 to run it might be implemented in another language, which is the case
 for e.g. `dfnWorks` [@hyman_dfnworks_2015].
-
-The licenses are indicated using SPDX IDs as defined by
-<https://opensource.org/licenses> where applicable.
-
 
 {% for section in rendered_sections %}
 {{ section }}

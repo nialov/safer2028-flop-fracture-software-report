@@ -1,6 +1,6 @@
 [[schema]]
 Heading = "Info"
-Description = "General links for further info on software alongside author, license and interface info."
+Description = "General links for further info on software alongside author, license (SPDX ID; <https://opensource.org/licenses>) and interface info."
 
 [[schema]]
 Heading = "Data"
