@@ -83,6 +83,7 @@ def format_pandoc_cmd(
         "--toc",
         "--csl",
         str(csl_path),
+        "--standalone",
     ]
 
     return cmd
