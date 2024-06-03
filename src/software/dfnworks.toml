@@ -47,7 +47,18 @@ forum = "https://groups.google.com/d/forum/dfnworks-users"
 
 [state_of_documentation]
 installation = """
-Installation instructions are given for Docker and native Linux installation (for Ubuntu).
+Installation instructions are given for Docker and native Linux installation
+(for Ubuntu). Of these two options, the Docker installation is the easier one.
+At the time of publication of this report, downloading (pulling) `dfnWorks` and
+running with docker consists of only two commands, assuming you have Docker
+installed:
+
+~~~bash
+docker pull ees16/dfnworks:latest
+docker run -ti ees16/dfnworks:latest
+~~~
+
+See the documentation for further guidance.
 """
 usage = """
 Usage instructions consists of example cases
