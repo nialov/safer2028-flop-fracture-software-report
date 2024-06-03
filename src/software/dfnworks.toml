@@ -12,22 +12,29 @@ geometric parameters. The length distribution type i.e. truncated power-law
 (Figure @fig:dfnworks_power_law_dfn_mesh_20240521), lognormal, exponential and
 constant can be defined and the relevant parameters can be given e.g. alpha
 (~exponent) for truncated power-law. A P32 value can be given that will be used
-to define the stop condition for the fracture network generation.
+to define the stop condition for the fracture network generation. Overall, the
+input options are numerous and defined in text files, usually with a `inp`
+extension, at least for the `dfnGen` module which is responsible for stochastic
+fracture generation. Text files with `dat` extension are used to define e.g.
+geometries used in fracture generation.
 
 ![DFN, generated with `dfnWorks`, with truncated power law distributed
 fractures. Image from `dfnWorks` [@hyman_dfnworks_2015]
 documentation.](src/images/dfnworks_power_law_dfn_mesh_20240521.png){#fig:dfnworks_power_law_dfn_mesh_20240521}
 """
 outputs = """
-dfnworks usses `LaGriT` (<https://lagrit.lanl.gov/>) for meshing the results of
-DFN generation into outputs that are suitable for use with `FEHM` and
-`PFLOTRAN`. `dfnworks` can conduct flow and transport modelling using these two
-software. Outputs of these include `vtk` files.
+The multiple modules of `dfnWorks` all produce outputs. Typical outputs from
+`dfnGen` module are text files with a `dat` extension for e.g. generated
+fractures and intersections between fractures. Similarly, outputs of `dfnFlow`
+are in various text files. Furthermore, final outputs of `dfnWork` workflows
+include `vtk` files which can be opened in for 3D viewing in e.g. `ParaView`.
+Furthermore, various plots are produced using `matplotlib` [@hunter_matplotlib_2007] for visualizing
+e.g. fracture orientations.
 """
 remarks = """
 The utility of the suite is very evident from the number of publications using
 it (<https://dfnworks.lanl.gov/publications.html>). It is part of the *GDSA
-Framework Software* [@sevougian_gdsa_nodate]
+Framework Software* [@sevougian_gdsa_2018]
 collection of software for deep geological repository modelling.
 """
 license = "LGPL-3.0-only"
