@@ -70,7 +70,7 @@
             name = "validate";
             runtimeInputs = self'.devShells.default.buildInputs;
             text = ''
-              fd --extension toml . ./task_5_report | parallel "python3 ./task_5_report/validate_schema.py {}"
+              fd --extension toml . ./src/software/ | parallel "python3 ./scripts/validate_schema.py {}"
             '';
           };
           build = pkgs.writeShellApplication {
