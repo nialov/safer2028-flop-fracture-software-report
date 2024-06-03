@@ -6,17 +6,32 @@ authors = [
 ]
 interface = "Python code"
 input_data = """
-Definition of geometries in code.
+Definition of channel geometries in code. E.g.
+
+~~~python
+#  The first part shows the generation of a full Lattice network with lognormally distributed channel conductances
+#  In this case we choose an even spacing of 1m between channels in all directions
+dx, dy, dz = 1., 1., 1.
+#  We decide to create a lattice of 50 nodes (49 channels) in each direction
+nx, ny, nz = 49, 49, 49
+#  The the total network will have a dimension of 49x49x49
+#  We choose a mean log conductance of -6 (log10 [m**2/s]) and a standard deviation of 1.5 in each direction
+meanlogc, sigma = -6., 1.5
+#  Now we create the Lattice network
+LN = pychan3d.LatticeNetwork(nx, ny, nz, dx, dy, dz, meanlogc, meanlogc, meanlogc, sigma, sigma, sigma, seed=987654321)
+~~~
 """
 outputs = """
-Modelling outputs can be saved in `vtk` format for viewing with e.g. `Paraview` software.
+Modelling outputs can be saved in `vtk` format for viewing with e.g. `Paraview`
+software. Further coding can be used to extract further results.
 """
 remarks = """
 Primarily a flow and solute transport library but designed with the channel
 network approach where the transport happens along 1-dimensional channels
 rather than e.g. surfaces. The approach is based on the large set of evidence
-showing how transport in fracture networks is channeled. Latest update to the
-software seems to be in 2018.
+showing how transport in fracture networks is channeled. The software is built
+based on `CHAN3D` code [@gylling_analysis_1998]. Latest update to the software
+seems to be in 2018.
 """
 license = "MIT"
 
