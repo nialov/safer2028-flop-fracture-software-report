@@ -22,6 +22,7 @@ DEFAULT_OUTPUT_DIR_PATH = Path("outputs/safer2028-flop-fracture-software-report/
 DEFAULT_SOFTWARE_TOML_DIR_PATH = Path("src/software/")
 DEFAULT_IMAGES_PATH = Path("src/images")
 DEFAULT_CSL_PATH = Path("src/journal-of-structural-geology.csl")
+DEFAULT_LATEX_TEMPLATE_PATH = DEFAULT_TEMPLATES_DIR_PATH / "pandoc_latex_template.tex"
 
 
 def _render_section(
@@ -147,7 +148,7 @@ def main(
         format_pandoc_cmd, bibliography_path=bibliography_path, csl_path=csl_path
     )
 
-    for extension in ("pdf", "docx"):
+    for extension in ("pdf", "docx", "latex"):
 
         output_path = output_dir_path / f"{output_name}.{extension}"
 
