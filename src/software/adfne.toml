@@ -19,7 +19,7 @@ Draw('ply',fnm);
 Export(gcf,'dfn_3d_sets_adfne1.5.png');
 ~~~
 
-![A 3D DFN, generated with `ADFNE`, consisting of two sets. Image from the `ADFNE`
+![A 3D DFN, generated with `ADFNE`, consisting of two fracture sets. Image from the `ADFNE`
 [@fadakar_alghalandis_adfne_2017]
 manual.](src/images/adfne_dfn_3d_two_sets.png){#fig:adfne_dfn_3d_two_sets}
 

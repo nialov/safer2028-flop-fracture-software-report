@@ -208,7 +208,7 @@ following the aforementioned link.
 
 # Acknowledgements
 
-This report is released as part of the SAFER FLOP -project, funded by the
+This report has been released as part of the SAFER FLOP -project, funded by the
 National Nuclear Waste Management Fund (Finland; Ydinjätehuoltorahasto) and
 the Geological Survey of Finland.
 
