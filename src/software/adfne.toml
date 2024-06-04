@@ -2,10 +2,10 @@ name = "ADFNE"
 authors = [
     "Younes Fadakar Alghalandis",
 ]
-interface = "Matlab code"
+interface = "`Matlab` code"
 input_data = """
-The parameters for fracture generation are defined in the Matlab code by the
-user and include e.g. aperture or an aperture field function and definition of
+The parameters for fracture generation are defined in `Matlab` code by the
+user and include, for example, the aperture or an aperture field function and the definition of
 fracture sets (Figure @fig:adfne_dfn_3d_two_sets):
 
 ~~~matlab
@@ -19,38 +19,39 @@ Draw('ply',fnm);
 Export(gcf,'dfn_3d_sets_adfne1.5.png');
 ~~~
 
-![3D DFN, generated with `ADFNE`, consisting of two sets. Image from ADFNE
+![A 3D DFN, generated with `ADFNE`, consisting of two sets. Image from the `ADFNE`
 [@fadakar_alghalandis_adfne_2017]
 manual.](src/images/adfne_dfn_3d_two_sets.png){#fig:adfne_dfn_3d_two_sets}
 
-For length distributions of the fractures only exponential distributions are
-demonstrated or mentioned in documentation. Connectivity, based on
-documentation, is defined for the generated fracture networks. The network is
-iteratively made to match wanted connectivity values i.e. it is calculated from
-a realized model and the model is accepted or discarded based on if it matches
-the wanted connectivity value.
+For the length distributions of the fractures, only exponential distributions are
+demonstrated or mentioned in the documentation. Connectivity, according to the
+documentation, is defined for the generated fracture networks. A network is
+iteratively made to match the desired connectivity values, i.e., it is calculated from
+a realized model and the model is accepted or discarded based on whether it matches
+the desired connectivity value.
 """
 outputs = """
 In the documentation, exporting to `png` images for simple visualization is
-most commonly shown but the `Export` further supports data formats such as
-`vtk`, `txt`, `xyz` and `geo`. Due to Matlab being an interpreted language the
-results are available after code execution as Matlab variables.
+most commonly illustrated, but the `Export` function further supports data
+formats such as `vtk`, `txt`, `xyz` and `geo`. Due to `Matlab` being an
+interpreted language, the results are available after code execution as `Matlab`
+variables.
 """
 remarks = """
-The software availability has changed over the years. First version was
-released free and open-source on *GitHub* but later versions were behind a
-request to the author. Currently version 1.5 is again freely available on
+The availability of the software has changed over the years. The first version was
+released free and open source on *GitHub* but later versions have been behind a
+request to the author. Currently, version 1.5 is again freely available on
 *GitHub* (<https://github.com/AlghalandisComputing/ADFNE1.5>). Whether further
-updates are released openly is unknown.
+updates will be released openly is unknown.
 
-Matlab is a commercial application and therefore use of *ADFNE* requires a paid
-Matlab license. The possibility to run *ADFNE* through *GNU Octave*, a free and
-open-source Matlab alternative, is mentioned but not demonstrated.
+`Matlab` is a commercial application, and use of *ADFNE* therefore requires a paid
+`Matlab` license. The possibility to run *ADFNE* through *GNU Octave*, a free and
+open-source `Matlab` alternative, is mentioned but not demonstrated.
 
 The custom license allows redistribution in source and binary formats provided
 that the software is cited and the same copyright notice is distributed.
 
-Overall the functionality seems extensive and is well documented.
+Overall the functionality appears extensive and is well documented.
 """
 license = "Custom"
 
@@ -62,40 +63,37 @@ forum = "https://github.com/AlghalandisComputing/ADFNE1.5/issues"
 
 [state_of_documentation]
 installation = """
-The software consists of Matlab script files which can be executed in the
-Matlab environment.
+The software consists of `Matlab` script files which can be executed in the
+`Matlab environment.
 """
 usage = """
-Usage instructions consist of detailed documentation of the different functions
-related to modelling and preprocessing and of example cases. The instructions
-are clear and well explained.
+Usage instructions include detailed documentation of the different functions
+related to modelling and preprocessing, together with example cases. The instructions
+are clear and well written.
 """
 examples = """
-Examples are given in the manual. These are provided along with succinct code
-examples which allow the user to reproduce the example figures. Examples
-usually start from generating a 2D or 3D DFN randomly or from defined fracture
-sets. Subsequently, a DFN is generated and flow through it is modelled by e.g.
-solving the backbone, i.e. connected part of the network, and modelling flow
-through the backbone channels. The largest example contains 500 fractures which
-is considered a medium sized model. Larger models are said to be
-computationally very intensive.
+Examples are provided in the manual along with succinct code examples that
+allow the user to reproduce the example figures. The examples usually start
+from the generation of a 2D or 3D DFN, either randomly or from defined fracture
+sets. Subsequently, after a DFN is generated, flow through it can be modelled
+by solving the backbone, i.e., the connected part of the network, where flow
+most likely occurs. The largest example contains 500 fractures, which is
+considered a medium-sized model. Larger models are noted to be computationally
+very intensive.
 """
 
 [capabilities]
 based_on_documentation = """
-Fracture modelling type is the Discrete Fracture Network method. The software
-is capable of both generating the fracture network and simulating flow within
-the generated 2D or 3D network. Furthermore, it contains a number of methods to
-characterize the generated network with e.g. a stereonet.
-
-Topology of the generated fracture network is given as a graph of nodes and
-edges and the *Connectivity* of the generated network is defined.
-
-Flow through the generated fracture network can be modelled in 2D or 3D with
-pipes or hybrid pipe-mesh modelling.
-
-Overall, the capabilities seem to be very extensive and cover most needs of DFN
-modelling and subsequent analysis both in 2D and 3D.
+The fracture modelling type is the discrete fracture network method. The
+software is capable of both generating the fracture network and simulating flow
+within the generated 2D or 3D network. Furthermore, it contains a number of
+methods to characterize the generated network, e.g., with a stereonet. The
+topology of the generated fracture network is given as a graph of nodes and
+edges and the *Connectivity* of the generated network can be calculated with
+the software. Flow through the generated fracture network can be modelled in 2D
+or 3D with pipes or hybrid pipe-mesh modelling. Overall, the capabilities
+appear to be very extensive and cover most needs of DFN modelling and
+subsequent analysis both in 2D and 3D.
 """
 based_on_testing = """
 """
