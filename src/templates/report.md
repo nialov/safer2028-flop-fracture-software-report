@@ -185,8 +185,13 @@ website, such as *GitHub* or *Gitlab*, guarantees better discoverability by
 future researchers. Due to these criteria, this review only included TODO
 software. A larger sample of software would have been useful for applicability
 of this report but it nonetheless fulfils the goal of demonstrating the current
-quantity and state of free and open-source 3D fracture characterization software,
-and in this case the state is the low number of findable software.
+quantity and state of free and open-source 3D fracture characterization
+software. The criteria for being free is not strict as some software have
+components that require proprietary software for full use of the software. E.g.
+`ADFNE` requires a `Matlab` license and `CTtoDFM` requires multiple proprietary
+software to fully complete the described workflow. However, with the source
+freely available it is at least theoretically possible to replicate these
+workflows with free software in the future.
 
 In an attempt to address the issues of the report contents being only a view of
 the author and only reflecting the state at the time of release, the report

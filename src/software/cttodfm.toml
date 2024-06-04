@@ -3,141 +3,57 @@ authors = [
     "Carlos Ferreira",
     "Nick Hamidreza",
 ]
-interface = ""
+interface = "Python code"
 input_data = """
-For the generation of fracture networks (`DFNgen`) dfnworks accepts a number of
-geometric parameters. The length distribution type i.e. truncated power-law
-(Figure @fig:dfnworks_power_law_dfn_mesh_20240521), lognormal, exponential and
-constant can be defined and the relevant parameters can be given e.g. alpha
-(~exponent) for truncated power-law. A P32 value can be given that will be used
-to define the stop condition for the fracture network generation. Overall, the
-input options are numerous and defined in text files, usually with a `inp`
-extension, at least for the `dfnGen` module which is responsible for stochastic
-fracture generation. Text files with `dat` extension are used to define e.g.
-geometries used in fracture generation.
+Pre-processing within `CTtoDFM` includes meshing a
+point cloud of the fractures from the CT scan along with many more steps
+(Figure @fig:cttodfm_workflow) listed in the `README.md` of the repository.
 
-![DFN, generated with `dfnWorks`, with truncated power law distributed
-fractures. Image from `dfnWorks` [@hyman_dfnworks_2015]
-documentation.](src/images/dfnworks_power_law_dfn_mesh_20240521.png){#fig:dfnworks_power_law_dfn_mesh_20240521}
+![Workflow of `CTtoDFM` from CT images to fracture and flow modelling. Image from @ferreira_computed-tomography-based_2023.](src/images/cttodfm_workflow.jpg){#fig:cttodfm_workflow}
 """
 outputs = """
-The multiple modules of `dfnWorks` all produce outputs. Typical outputs from
-`dfnGen` module are text files with a `dat` extension for e.g. generated
-fractures and intersections between fractures. Similarly, outputs of `dfnFlow`
-are in various text files. Furthermore, final outputs of `dfnWork` workflows
-include `vtk` files which can be opened in for 3D viewing in e.g. `ParaView`.
-Furthermore, various plots are produced using `matplotlib` [@hunter_matplotlib_2007] for visualizing
-e.g. fracture orientations.
+3D-images of the results can be saved in `vtk` format for viewing in
+visualization software. Furthermore, the "shape" of the models is saved in text
+files (`txt`).
 """
 remarks = """
-The utility of the suite is very evident from the number of publications using
-it (<https://dfnworks.lanl.gov/publications.html>). It is part of the *GDSA
-Framework Software* [@sevougian_gdsa_2018]
-collection of software for deep geological repository modelling.
+`CTtoDFM` is specialized for the creation of integrated discrete
+fracture-matrix models based on 3D computer tomography (CT) scan images (`tiff`
+files) of rock volumes. Consequently, it is not useful for general scenarios of
+e.g. DFN-modelling but rather for cases where CT scanning rock samples is
+possible. Use of the software requires `Rhinoceros 4.0` and `Ansys ICEM CFD`
+i.e. while the code is open, using it fully requires proprietary licenses.
 """
-license = "LGPL-3.0-only"
+license = "Unknown"
 
 [url]
-repository = "https://github.com/lanl/dfnWorks"
-documentation = "https://dfnworks.lanl.gov/index_docs.html"
-reference = "https://doi.org/10.1016/j.cageo.2015.08.001"
-forum = "https://groups.google.com/d/forum/dfnworks-users"
+repository = "https://gitlab.gbar.dtu.dk/offshore/CTtoDFM/"
+documentation = "https://gitlab.gbar.dtu.dk/offshore/CTtoDFM/"
+reference = "https://doi.org/10.1016/j.advwatres.2023.104450"
+forum = ""
 
 [state_of_documentation]
 installation = """
-Installation instructions are given for Docker and native Linux installation
-(for Ubuntu). Of these two options, the Docker installation is the easier one.
-At the time of publication of this report, downloading (pulling) `dfnWorks` and
-running with docker consists of only two commands, assuming you have Docker
-installed:
-
-~~~bash
-docker pull ees16/dfnworks:latest
-docker run -ti ees16/dfnworks:latest
-~~~
-
-See the documentation for further guidance.
+Installation instructions are given for Windows 10. Multiple software need to
+be installed including `Docker` for Windows.
 """
 usage = """
-Usage instructions consists of example cases
-(<https://dfnworks.lanl.gov/examples.html>) and example code alongside the user
-documentation. See below for a part of a code example of using `dfnWorks` with
-Python code.
-
-~~~python
-# Contents of driver.py
-...
-
-DFN = DFNWORKS(jobname,
-               dfnFlow_file=dfnFlow_file,
-               dfnTrans_file=dfnTrans_file,
-               ncpu=8)
-
-...
-
-DFN.add_user_fract(shape='rect',
-                   radii=.6,
-                   translation=[0.4, 0, -0.2],
-                   normal_vector=[0, 0, 1],
-                   permeability=1.0e-12)
-
-...
-DFN.create_network()
-DFN.mesh_network()
-
-DFN.dfn_flow()
-DFN.dfn_trans()
-~~~
-
-To subsequently run the `driver.py` file from the command-line:
-
-~~~bash
-python driver.py
-~~~
-
+Usage instructions consist of Python code and command-line examples that
+describe the workflow from CT scans to modelling (Figure
+@fig:cttodfm_workflow). The workflow uses multiple software to get to the end
+result i.e. the process is somewhat complex and manual.
 """
 examples = """
-The repository contains an `examples` folder with multiple code examples of
-use. Some of these are explained further in the official documentation. These
-examples vary from "simple" user-defined geometry inspection to flow,
-contaminant and reactive transport modelling. These provide a starting point
-for new users to start configuring their own models as they can be used as
-guidance on how to configure `dfnWorks` modelling for different scenarios.
-
-In the documentation, example applications are given that explain uses of
-`dfnWorks` in real life applications of carbon dioxide sequestration, shale
-energy extraction and nuclear waste repository investigation, where e.g.
-contaminant transport must be modelled (Figure
-@fig:dfnworks_forsmark_trajectories_20240521). The examples include references
-to scientific publications and reports where the investigations are described
-further.
-
-![Particle trajectories modelled with `dfnWorks` at Forsmark, Sweden. Image
-from `dfnWorks`
-documentation.](src/images/dfnworks_forsmark_trajectories_20240521.png){#fig:dfnworks_forsmark_trajectories_20240521}
+The repository `README.md` describes an example workflow but the input data for
+the workflow is not provided.
 """
 
 [capabilities]
 based_on_documentation = """
-The suite consists of modules that target different stages of fracture and flow
-modelling. `dfnGen` is used to create DFNs, `dfnFlow` is used to model flow
-transport within the generated DFNs and, lastly, `dfnTrans` is used for
-particle/contaminant transport modelling. Furthermore, minor modules include
-`dfnGraph`, which is responsible for modelling the graph of a DFN and used in
-e.g. subsequent pipe network modelling. Altogether, the suite seems very
-extensive in terms of features. `dfnWorks` is capable of defining the backbone
-of a fracture network based on the connectivity i.e. by pruning fractures that
-are not connected to any others. This is demonstrated in the code examples
-within a `pruning` directory.
+The reference article and repository `README.md` describe a workflow from
+CT scan images to fracture and flow modelling. End results of the modelling incluce fracture network and permeability visualizations and tensors of permeability (Figure @fig:cttodfm_permeability_tensors).
 
-The documentation directly mentions example applications in carbon dioxide
-sequestration, shale energy extraction and nuclear waste management. For
-sequestration, `dfnworks` provides multiphase simulations of flow and reactive
-transport. For shale energy extraction using fracking, `dfnworks` was used to
-physically model the process. In nuclear waste management, the generation of
-DFNs and consequent contaminant transport modelling is possible with
-`dfnworks`.
+![Permeability tensors produced as an end product of `CTtoDFM` flow modelling. Image from @ferreira_computed-tomography-based_2023.](src/images/cttodfm_permeability_tensors.jpg){#fig:cttodfm_permeability_tensors}
 """
 based_on_testing = """
-
 """
