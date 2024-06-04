@@ -22,16 +22,17 @@ LN = pychan3d.LatticeNetwork(nx, ny, nz, dx, dy, dz, meanlogc, meanlogc, meanlog
 ~~~
 """
 outputs = """
-Modelling outputs can be saved in `vtk` format for viewing with e.g. `Paraview`
-software. Further coding can be used to extract further results.
+Modelling outputs can be saved in `vtk` format for viewing, for example, with
+`Paraview` software [@ayachit_paraview_2015]. Further coding can be used to
+extract further results.
 """
 remarks = """
-Primarily a flow and solute transport library but designed with the channel
-network approach where the transport happens along 1-dimensional channels
-rather than e.g. surfaces. The approach is based on the large set of evidence
-showing how transport in fracture networks is channeled. The software is built
-based on `CHAN3D` code [@gylling_analysis_1998]. Latest update to the software
-seems to be in 2018.
+This is primarily a flow and solute transport library, but designed with a
+"channel network" approach where transport occurs along one-dimensional
+channels rather than, for example, surfaces. The approach is based on a large
+set of evidence demonstrating how transport in fracture networks is channelled.
+The software is built based on `CHAN3D` code [@gylling_analysis_1998]. The
+latest update to the software appears to be in 2018.
 """
 license = "MIT"
 
@@ -43,33 +44,33 @@ forum = "https://github.com/bende937/pychan3d"
 
 [state_of_documentation]
 installation = """
-Installation instructions are given for native Linux installation.
+Installation instructions are provided for native Linux installation.
 """
 usage = """
-Usage instructions consists of example cases with limited documentation in the form
+Usage instructions consist of example cases with limited documentation in the form
 of comments alongside the methodological introduction in the journal article
 where the software is introduced [@dessirier_new_2018].
 """
 examples = """
 The repository contains an `examples` folder with multiple examples of use. The
-examples consists of `Jupyter` notebooks that contain Python code along with
+examples consist of `Jupyter` notebooks that contain Python code along with
 example input data. The examples are for 1) a "full lattice network", 2) a
 "full lattice network" that is modified in geometry by carving before modelling
-and 3) for a unstructured network of channels where steady-state flow is
-solved. Altogether the examples are specialized and do not focus on fracture
-generation, rather on generating pipe networks and subsequent flow and
+and 3) for an unstructured network of channels, where steady-state flow is
+solved. Overall, the examples are specialized and do not focus on fracture
+generation, but rather on generating pipe networks and subsequent flow and
 transport modelling.
 """
 
 [capabilities]
 based_on_documentation = """
 The primary purpose of the software is to model channeled flow in fracture
-networks. To achieve this, it generates a channel network, rather than a
+networks. To achieve this, it generates a channel network rather than a
 fracture network, and uses the channel network as the basis for flow and solute
 transport modelling (Figure @fig:pychan3d_channel_flow).
 
 ![Channel networks, generated with `Pychan3d`, with different input parameters
-where flow is modelled. Image from
+fow modelling flow. Image from
 @dessirier_new_2018.](src/images/pychan3d_channel_flow.jpg){#fig:pychan3d_channel_flow}
 """
 based_on_testing = """

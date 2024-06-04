@@ -4,33 +4,31 @@ authors = [
     "Siarhei Khirevich",
     "Tadeusz W. Patzek",
 ]
-interface = "C++ and Matlab code"
+interface = "`C++` and `Matlab` code"
 input_data = """
-The parameters for fracture generation are defined in the C++ code by the
-user. For length distributions of the fractures power-law distribution options
-are best documented. 
+The parameters for fracture generation are defined in `C++` code by the
+user. For the length distributions of the fractures, power-law distribution options
+are the best documented. 
 """
 outputs = """
-Matlab code is provided to plot the results. Furthermore, the results are
+`Matlab` code is provided to plot the results. Furthermore, the results are
 outputted as text files containing fracture coordinates and cluster labels.
 """
 remarks = """
-The software mainly aligns itself as being a faster alternative to the `ADFNE`
-software [@fadakar_alghalandis_adfne_2017]. This is achieved by using C++ instead of Matlab.
-However, use of C++ makes interacting with the software more complex. It is
-mentioned that the code is not user-friendly and only meant to demonstrate how
-to solve the scientific problems for the purposes of a journal article.
-Furthermore, the included `README.txt` files included in the source code
-directory state that only a "part of the HatchFrac code" has been made
-available. Lack of full code base and license makes further use of `HatchFrac`
-very difficult.
-
-The capability to grow fractures to have real abutments against other fractures
-is the main attraction of this software (Figure
-@fig:hatchfrac_termination_sketch).
+The software mainly aligns itself as being a faster alternative to `ADFNE`
+[@fadakar_alghalandis_adfne_2017]. This is achieved by using `C++` instead of
+`Matlab`. However, use of `C++` makes interaction with the software more
+complex. It is mentioned that the code is not user-friendly and only intended
+to demonstrate how to solve the scientific problems for the purposes of a
+journal article. Furthermore, the `README.txt` files included in the source
+code directory state that only a "part of the HatchFrac code" has been made
+available. The lack of a full code base and license makes the further use of
+`HatchFrac` very difficult. The capability to grow fractures to have real
+abutments against other fractures seems to be the main scientific
+novelty of the software (Figure @fig:hatchfrac_termination_sketch).
 
 ![Sketch illustrating the algorithm to control fracture growth in `hatchfrac`
-using abutments to prior fractures. Image from
+using abutments against prior fractures. Image from
 @zhu_hatchfrac_2022.](src/images/hatchfrac_termination_sketch.jpg){#fig:hatchfrac_termination_sketch}
 """
 license = "Unknown"
@@ -43,11 +41,11 @@ forum = ""
 
 [state_of_documentation]
 installation = """
-Limited instructions are given for installing in the Visual Studio 2017
+Limited instructions are provided for installation in the Visual Studio 2017
 environment on Windows.
 """
 usage = """
-No practical usage instructions are given with the exception of short
+No practical usage instructions are given, with the exception of short
 `README.txt` files included with the examples.
 """
 examples = """
@@ -58,22 +56,22 @@ The reference journal article contains scientific examples of usage:
 2. mimic the fracture growth process in a rule-based format;"
 ~~~
 
-However, running the examples is only supported in a "Visual Studio 2017"
-environment and limited further instructions are given on how to e.g. further
-develop the examples.
+However, running of the examples is only supported in a "Visual Studio 2017"
+environment, and limited instructions are provided, for example, on how to
+further develop the examples.
 """
 
 [capabilities]
 based_on_documentation = """
 In the reference journal article, the scientific applicability of the software
 is demonstrated for fracture generation in 2D and 3D (Figure
-@fig:hatchfrac_3d_fracture_networks) and for percolation, fracture intensity
+@fig:hatchfrac_3d_fracture_networks) and for percolation, fracture intensity,
 and flow and connectivity analysis. The examples included with the source code
-demonstrate 3D-DFN generation and fracture growth "in a rule-based format".
+demonstrate 3D-DFN generation and fracture growth "in a rule-based format."
 
 ![3D fracture networks, generated with `hatchfrac`, where in the left subfigure
-network the centers of the fractures follow a "fractal spatial density" whereas
-in the right subfigure they are uniformly distributed. Image from
+network the centres of the fractures follow a "fractal spatial density", whereas
+in the right subfigure, they are uniformly distributed. Image from
 @zhu_hatchfrac_2022.](src/images/hatchfrac_3d_fracture_networks.jpg){#fig:hatchfrac_3d_fracture_networks}
 """
 based_on_testing = """

@@ -7,18 +7,19 @@ authors = [
 ]
 interface = "Python code"
 input_data = """
-For the generation of fracture networks (`DFNgen`) dfnworks accepts a number of
-geometric parameters. The length distribution type i.e. truncated power-law
-(Figure @fig:dfnworks_power_law_dfn_mesh_20240521), lognormal, exponential and
-constant can be defined and the relevant parameters can be given e.g. alpha
-(~exponent) for truncated power-law. A P32 value can be given that will be used
-to define the stop condition for the fracture network generation. Overall, the
-input options are numerous and defined in text files, usually with a `inp`
-extension, at least for the `dfnGen` module which is responsible for stochastic
-fracture generation. Text files with `dat` extension are used to define e.g.
-geometries used in fracture generation.
+For the generation of fracture networks (`dfnGen`) `dfnWorks` accepts a number of
+geometric parameters. The length distribution type, i.e., truncated power law
+(Figure @fig:dfnworks_power_law_dfn_mesh_20240521), lognormal, exponential or
+constant, can be defined and the relevant parameters can be given, e.g., alpha
+(~exponent) for the truncated power law. A fracture intensity P32
+[@sanderson_use_2015] value can be given that is used to define the stop
+condition for fracture network generation. Overall, the input options for
+fracture generation (`dfnGen`) are
+numerous and defined in text files, usually with a `inp` extension alongside
+text files with `dat` extension that are, e.g., used to define geometries used in
+fracture generation.
 
-![DFN, generated with `dfnWorks`, with truncated power law distributed
+![DFN, generated with `dfnWorks`, with truncated power law -distributed
 fractures. Image from `dfnWorks` [@hyman_dfnworks_2015]
 documentation.](src/images/dfnworks_power_law_dfn_mesh_20240521.png){#fig:dfnworks_power_law_dfn_mesh_20240521}
 """
@@ -27,13 +28,13 @@ The multiple modules of `dfnWorks` all produce outputs. Typical outputs from
 `dfnGen` module are text files with a `dat` extension for e.g. generated
 fractures and intersections between fractures. Similarly, outputs of `dfnFlow`
 are in various text files. Furthermore, final outputs of `dfnWork` workflows
-include `vtk` files which can be opened in for 3D viewing in e.g. `ParaView`.
+include `vtk` files which can be opened in for 3D viewing in e.g. `ParaView` [@ayachit_paraview_2015].
 Furthermore, various plots are produced using `matplotlib` [@hunter_matplotlib_2007] for visualizing
 e.g. fracture orientations.
 """
 remarks = """
-The utility of the suite is very evident from the number of publications using
-it (<https://dfnworks.lanl.gov/publications.html>). It is part of the *GDSA
+The utility of the suite is very evident from the number of publications in which
+it has been used (<https://dfnworks.lanl.gov/publications.html>). It is part of the *GDSA
 Framework Software* [@sevougian_gdsa_2018]
 collection of software for deep geological repository modelling.
 """
@@ -47,7 +48,7 @@ forum = "https://groups.google.com/d/forum/dfnworks-users"
 
 [state_of_documentation]
 installation = """
-Installation instructions are given for Docker and native Linux installation
+Installation instructions are provided for Docker and native Linux installation
 (for Ubuntu). Of these two options, the Docker installation is the easier one.
 At the time of publication of this report, downloading (pulling) `dfnWorks` and
 running with docker consists of only two commands, assuming you have Docker
@@ -61,10 +62,10 @@ docker run -ti ees16/dfnworks:latest
 See the documentation for further guidance.
 """
 usage = """
-Usage instructions consists of example cases
+Usage instructions consist of example cases
 (<https://dfnworks.lanl.gov/examples.html>) and example code alongside the user
-documentation. See below for a part of a code example of using `dfnWorks` with
-Python code.
+documentation. See below for part of a code example of using `dfnWorks` with
+`Python` code.
 
 ~~~python
 # Contents of driver.py
@@ -125,17 +126,17 @@ The suite consists of modules that target different stages of fracture and flow
 modelling. `dfnGen` is used to create DFNs, `dfnFlow` is used to model flow
 transport within the generated DFNs and, lastly, `dfnTrans` is used for
 particle/contaminant transport modelling. Furthermore, minor modules include
-`dfnGraph`, which is responsible for modelling the graph of a DFN and used in
-e.g. subsequent pipe network modelling. Altogether, the suite seems very
+`dfnGraph`, which is responsible for modelling the graph of a DFN and is used, for example, in
+subsequent pipe network modelling. Altogether, the suite appears very
 extensive in terms of features. `dfnWorks` is capable of defining the backbone
-of a fracture network based on the connectivity i.e. by pruning fractures that
+of a fracture network based on the connectivity, i.e., by pruning fractures that
 are not connected to any others. This is demonstrated in the code examples
 within a `pruning` directory.
 
 The documentation directly mentions example applications in carbon dioxide
 sequestration, shale energy extraction and nuclear waste management. For
 sequestration, `dfnworks` provides multiphase simulations of flow and reactive
-transport. For shale energy extraction using fracking, `dfnworks` was used to
+transport. For shale energy extraction using fracking, `dfnworks` has been used to
 physically model the process. In nuclear waste management, the generation of
 DFNs and consequent contaminant transport modelling is possible with
 `dfnworks`.

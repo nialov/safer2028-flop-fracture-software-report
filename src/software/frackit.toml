@@ -2,9 +2,9 @@ name = "frackit"
 authors = ["Dennis Gläser"]
 interface = "Python code"
 input_data = """
-The software allows/requires the user to define sets based on orientation and
+The software allows/requires the user to define fracture sets based on orientation and
 to constrain the randomly generated fractures of the set with a statistical
-distribution. E.g. to define the sampling strategy for a single azimuth set:
+distribution. For example, to define the sampling strategy for a single azimuth set:
 
 ~~~python
 from frackit.sampling import QuadrilateralSampler as QuadSampler
@@ -22,9 +22,9 @@ outputs = """
 Frackit can output data in "a number of standard CAD file formats readable by
 OpenCASCADE" (`.brep`) and `Gmsh` (`.geo`). Furthermore, the documentation
 highlights the possibility of using the output data in conjunction with
-`DuMuX` [@flemisch_dumux_2011], a software for flow and transport modelling in porous media (Figure @fig:frackit_with_other_software).
+`DuMuX` [@flemisch_dumux_2011], a software program for flow and transport modelling in porous media (Figure @fig:frackit_with_other_software).
 
-![Workflow sketch of using `frackit` with `Gmsh` [@geuzaine_gmsh_2009] and
+![Workflow sketch of illustrating the use of `frackit` with `Gmsh` [@geuzaine_gmsh_2009] and
 `DuMuX` [@flemisch_dumux_2011]. Image from
 @glaser_frackit_2020.](src/images/frackit_with_other_software.jpg){#fig:frackit_with_other_software}
 """
@@ -36,8 +36,8 @@ traditional two-dimensional fracture characterization workflows.
 
 The author of the software, Dennis Gläser, was responsive and helpful in
 communication. An initial draft of using two-dimensional network
-characteristics as inputs in Frackit was devised some time ago already as the
-interest for collaboration was started.
+characteristics as inputs in Frackit was already devised some time ago
+as interest in collaboration started.
 """
 license = "GPL-3.0-only"
 
@@ -49,25 +49,25 @@ documentation = "https://git.iws.uni-stuttgart.de/tools/frackit"
 
 [state_of_documentation]
 installation = """
-Installation instructions are found on the main documentation page for native
+Installation instructions are provided on the main documentation page for native
 Linux installation on Debian and similar distributions. Installation
-instructions are also given for Docker.
+instructions are also provided for Docker.
 """
 usage = """
-Usage instructions mostly consists of example cases, such as
+Usage instructions mostly consist of example cases, such as
 <https://git.iws.uni-stuttgart.de/dumux-pub/glaeser2020a>. In the *General
-Concept* section it is mentioned that "Frackit does not prescribe a certain
+Concept* section, it is mentioned that "Frackit does not prescribe a certain
 program flow, instead, users are motivated to implement their own applications
-using the provided functions, classes and concepts".
+using the provided functions, classes and concepts."
 """
 examples = """
-The repository contains an `appl` folder with multiple examples of use using the
-Python bindings of the library. These examples show how to apply the library to
-your own data. See e.g.
+The repository contains an `appl` folder with multiple examples of applying the
+Python bindings of the library. These examples demonstrate how to apply the library to
+your own data. See, e.g.,
 <https://git.iws.uni-stuttgart.de/tools/frackit/tree/master/appl/example3>.
 
-These examples are mostly focused on geometrical details of producing a DFN (Figure @fig:).
-E.g., in example 2, a network is generated inside a cylindrical domain.
+These examples are mostly focused on the geometrical details of producing a DFN (Figure @fig:).
+For example, in example 2, a network is generated inside a cylindrical domain.
 
 ![DFN realization generated with `frackit`. Image from `frackit`
 [@glaser_frackit_2020]
@@ -76,11 +76,11 @@ documentation.](src/images/frackit_dfn_network.png)
 
 [capabilities]
 based_on_documentation = """
-The main purpose of Frackit is stochastic generation of fracture networks.
-Fractures are two-dimensional geometries in three-dimensional space i.e.
-without geometric aperture. Frackit is primarily meant for use in numerical
-models where e.g. the impact of network topology on hydraulic and mechanical
-properties of a porous media can be investigated.
+The main purpose of Frackit is the stochastic generation of fracture networks.
+The fractures are two-dimensional geometries in three-dimensional space, i.e.,
+without geometric apertures. Frackit is primarily intended for use in numerical
+models where, for example, the impact of network topology on the hydraulic and mechanical
+properties of a porous medium can be investigated.
 """
 based_on_testing = """
 

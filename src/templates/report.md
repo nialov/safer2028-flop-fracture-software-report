@@ -144,70 +144,72 @@ be implemented in another language, which is the case for example with
 
 ## Applicability of the report
 
-DFN-modelling is a critical component of site description/characterization of
-nuclear waste repositories [@fox_geological_2012]. Of the reviewed software
-most provide some form of DFN-modelling capability but only `dfnWorks` seems to
-have demonstrated use directly in such a context at Forsmark, Sweden
-[@hyman_influence_2015]. All the reviewed software provide opportunity to
-compare results to established models, made by e.g. `FracMan`, and some, such as
+DFN modelling is a critical component of site description/characterization of
+nuclear waste repositories [@fox_geological_2012]. Of the reviewed software solutions
+most provide some form of DFN modelling capability, but only `dfnWorks` appears to
+have demonstrated use directly in such a context, at Forsmark, Sweden
+[@hyman_influence_2015]. Most of the reviewed software tools provide an opportunity to
+compare the results with established models, made by e.g. `FracMan`, and some of them, such as
 `DFM Generator`, even provide output files that are directly readable by
-`FracMan`. However, some of the software are very specialized, such as
-`Pychan3d`, which is only purpose-built for the purpose of modelling channeled
-flow and probably lacks functionality to model more general cases. However,
-this specialization represents novel research and experimentation that might be
-considered in e.g. future nuclear waste safety cases and demonstrates the
-capability of new software to implement the newest knowledge on flow in
+`FracMan`. However, some of the software tools are very specialized, such as
+`Pychan3d`, which is purpose built for modelling channelled
+flow and probably lacks the functionality to model more general cases. However,
+this specialization reflects novel research and experimentation that might be
+considered, for example, in future nuclear waste safety cases, and it demonstrates the
+capability of new software to implement the latest knowledge on flow in
 a fractured medium. The most general purpose of the reviewed software, based on
-example applications, seems to be `dfnWorks` which is demonstrated by e.g.
-collaboration with developers of `FracMan` in experimenting with a combined
-DFN-modelling and subsequent flow modelling workflow [@gable_fracman_2022].
-Altogether this review provides important context for any end-users, whether it
+the example applications, appears to be `dfnWorks` which is demonstrated, for example, by
+collaboration with the developers of `FracMan` in experimenting with a combined
+DFN modelling and subsequent flow modelling workflow [@gable_fracman_2022].
+Altogether this review provides an important context for any end user, whether it
 be a nuclear waste company, their regulator or a geothermal energy expert, with
 a view into the current field of free and open-source 3D fracture modelling
-landscape and especially on DFN-modelling capable software.
+and especially DFN modelling -capable software.
 
 ## Report availability
 
-This review merely represents an outside view into the software, their state
-and their associated documentation. The developers and users of these software
-can provide further information on e.g. capabilities and for further info they
-should be contacted. Software also always develops and consequently, the
-information of this review only represents the current state of the software
-and associated data at the time of release of this report.
+This review merely presents a general view of the software tools, their state
+and their associated documentation. The developers and users of the software
+can provide further details, for example, on capabilities, and they should be
+contacted for further information. Moreover, software always develops, and, the
+information provided in this review thus only represents the current state of
+the software and associated data at the time of release of this report.
 
 Criteria for inclusion in this report included the software being free to use
-and having source code available. Furthermore, the software had to be found,
-which becomes an issue for one-off software that have been developed for e.g.
-a single article and released in only e.g. appendix format. As a recommendation
-for further software releases, a release of the source into a version control
-website, such as *GitHub* or *Gitlab*, guarantees better discoverability by
-future researchers. Due to these criteria, this review only included TODO
-software. A larger sample of software would have been useful for applicability
-of this report but it nonetheless fulfils the goal of demonstrating the current
-quantity and state of free and open-source 3D fracture characterization
-software. The criteria for being free is not strict as some software have
-components that require proprietary software for full use of the software. E.g.
-`ADFNE` requires a `Matlab` license and `CTtoDFM` requires multiple proprietary
-software to fully complete the described workflow. However, with the source
-freely available it is at least theoretically possible to replicate these
-workflows with free software in the future.
+and having available source code. Furthermore, the software had to be found,
+which becomes an issue for one-off software that has been developed, for
+example, for a single article and only released in an appendix format. As
+a recommendation for further software releases, the release of the source on
+a version control platform, such as *GitHub* or *Gitlab*, guarantees better
+discoverability by future researchers. Due to these criteria, this review only
+includes TODO software. A larger sample of software would have been useful to
+further increase the applicability of this report, but it nonetheless fulfils
+the goal of demonstrating the current quantity and state of free and
+open-source 3D fracture characterization software. The criteria for being free
+is not strict as some software have components that require proprietary
+software for full use of the software. E.g. `ADFNE` requires a `Matlab` license
+and `CTtoDFM` requires multiple proprietary software to fully complete the
+described workflow. However, with the source freely available it is at least
+theoretically possible to replicate these workflows with free software in the
+future.
 
-In an attempt to address the issues of the report contents being only a view of
-the author and only reflecting the state at the time of release, the report
-source text is available for inspection, corrections by e.g. software authors
-and edit contributions on *GitHub*:
+In an attempt to address the issues associated with the contents of this report
+only being a view of the author and only reflecting the state at the time of
+release, the source text of the report is available for inspection and, for
+example, corrections and updates by software authors and edit
+contributions on *GitHub*:
 
 -  <https://github.com/nialov/safer2028-flop-fracture-software-report>.
 
-Edits can be included in the way of issue creation or by directly modifying the
+Edits can be included by creating issue posts or by directly modifying the
 source and creating a pull requests. All contributions are welcome! Future
-edits to the contents are reflected in web (HTML) format which can be accessed
+edits to the contents will be reflected in web (HTML) format, which can be accessed
 following the aforementioned link.
 
 # Acknowledgements
 
 This report is released as part of the SAFER FLOP -project, funded by the
 National Nuclear Waste Management Fund (Finland; Ydinjätehuoltorahasto) and
-Geological Survey of Finland.
+the Geological Survey of Finland.
 
 # References
