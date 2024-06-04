@@ -1,10 +1,10 @@
 [[schema]]
 Heading = "Info"
-Description = "General links for further info on software alongside author, license (SPDX ID; <https://opensource.org/licenses>) and interface info."
+Description = "General links for further information on the software, alongside the author, license (SPDX ID; <https://opensource.org/licenses>) and interface information."
 
 [[schema]]
 Heading = "Data"
-Description = "Explanation of the input and output data the software uses and outputs"
+Description = "Explanation of the input and output data the software uses and the outputs"
 
 [[schema]]
 Heading = "Documentation"
@@ -12,8 +12,8 @@ Description = "A review of the documentation included with the software for the 
 
 [[schema]]
 Heading = "Capabilities"
-Description = "Capabilities of the software based on source code, documentation and reference article."
+Description = "Capabilities of the software based on the source code, documentation and reference article."
 
 [[schema]]
 Heading = "Remarks"
-Description = "Miscellaneous additional info on the software."
+Description = "Miscellaneous additional information on the software."

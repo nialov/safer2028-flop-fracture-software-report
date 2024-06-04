@@ -3,7 +3,7 @@
 ### Info
 
 -   Repository: <{{ url.repository }}>
--   Reference for e.g. citations: <{{ url.reference }}>
+-   Reference for citations: <{{ url.reference }}>
 -   Discussions: <{{ url.forum }}>
 -   Documentation: <{{ url.documentation }}>
 -   License: {{ license }}
