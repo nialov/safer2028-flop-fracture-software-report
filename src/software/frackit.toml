@@ -66,12 +66,12 @@ Python bindings of the library. These examples demonstrate how to apply the libr
 your own data. See, e.g.,
 <https://git.iws.uni-stuttgart.de/tools/frackit/tree/master/appl/example3>.
 
-These examples are mostly focused on the geometrical details of producing a DFN (Figure @fig:).
+These examples are mostly focused on the geometrical details of producing a DFN (Figure @fig:frackit_dfn_network).
 For example, in example 2, a network is generated inside a cylindrical domain.
 
 ![DFN realization generated with `frackit`. Image from `frackit`
 [@glaser_frackit_2020]
-documentation.](src/images/frackit_dfn_network.png)
+documentation.](src/images/frackit_dfn_network.png){#fig:frackit_dfn_network}
 """
 
 [capabilities]
