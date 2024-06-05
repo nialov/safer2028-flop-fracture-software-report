@@ -23,6 +23,8 @@ DEFAULT_SOFTWARE_TOML_DIR_PATH = Path("src/software/")
 DEFAULT_IMAGES_PATH = Path("src/images")
 DEFAULT_CSL_PATH = Path("src/journal-of-structural-geology.csl")
 DEFAULT_LATEX_TEMPLATE_PATH = DEFAULT_TEMPLATES_DIR_PATH / "pandoc_latex_template.tex"
+DEFAULT_ABSTRACT_ENGLISH_PATH = Path("src/abstract_english.md")
+DEFAULT_ABSTRACT_FINNISH_PATH = Path("src/abstract_finnish.md")
 
 
 def _render_section(
@@ -39,25 +41,8 @@ def _render_section(
     return rendered_section
 
 
-def create_software_schema_table():
-    # headings = ["Info", "Data", "Documentation", "Capabilities", "Remarks"]
-    # descriptions = [
-    #     "General links for further info on software alongside author and interface info.",
-    #     "Explanation of the input and output data the software uses and outputs, respectively.",
-    #     "A review of the documentation included with the software for the purposes of installation, practical use and examples",
-    #     "Capabilities of the software based on source code, documentation and reference article.",
-    #     "Miscellaneous additional info on the software.",
-    # ]
-    # assert len(headings) == len(descriptions)
-    # df = pd.DataFrame(
-    #     {
-    #         "Heading": headings,
-    #         "Description": descriptions,
-    #     },
-    # ).set_index("Heading")
-
-    software_schema_from_toml = tomli.loads(DEFAULT_SCHEMA_TABLE_PATH.read_text())
-    # print(software_schema_from_toml)
+def create_software_schema_table(schema_table_path: Path):
+    software_schema_from_toml = tomli.loads(schema_table_path.read_text())
     df = pd.DataFrame(software_schema_from_toml["schema"]).set_index("Heading")
 
     return df
@@ -107,6 +92,9 @@ def main(
     images_path: Path = typer.Option(DEFAULT_IMAGES_PATH),
     html_template_path: Optional[Path] = typer.Option(None),
     csl_path: Path = typer.Option(DEFAULT_CSL_PATH),
+    schema_table_path: Path = typer.Option(DEFAULT_SCHEMA_TABLE_PATH),
+    abstract_english_path: Path = typer.Option(DEFAULT_ABSTRACT_ENGLISH_PATH),
+    abstract_finnish_path: Path = typer.Option(DEFAULT_ABSTRACT_FINNISH_PATH),
 ):
     env = Environment(
         loader=loaders.FileSystemLoader(templates_dir_path),
@@ -120,12 +108,16 @@ def main(
         render_section_partial, software_toml_dir_path.glob("*.toml")
     )
 
-    software_schema_table_df = create_software_schema_table()
+    software_schema_table_df = create_software_schema_table(
+        schema_table_path=schema_table_path,
+    )
     software_schema_table = software_schema_table_df.to_markdown()
 
     rendered_report = env.get_template(report_template_name).render(
         rendered_sections=list(rendered_sections_map),
         software_schema_table=software_schema_table,
+        abstract_english=abstract_english_path.read_text(),
+        abstract_finnish=abstract_finnish_path.read_text(),
     )
 
     typer.echo("Formatting rendered markdown")
