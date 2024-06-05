@@ -9,7 +9,9 @@ Pre-processing within `CTtoDFM` includes meshing a
 point cloud of the fractures from the CT scan along with many more steps
 (Figure @fig:cttodfm_workflow) listed in the `README.md` of the repository.
 
-![Workflow of `CTtoDFM` from CT images to fracture and flow modelling. Image from @ferreira_computed-tomography-based_2023.](src/images/cttodfm_workflow.jpg){#fig:cttodfm_workflow}
+![Workflow of `CTtoDFM` from CT images to fracture and flow modelling. Image
+from
+@ferreira_computed-tomography-based_2023.](src/images/cttodfm_workflow.jpg){#fig:cttodfm_workflow}
 """
 outputs = """
 3D-images of the results can be saved in `vtk` format for viewing in
@@ -34,8 +36,8 @@ forum = ""
 
 [state_of_documentation]
 installation = """
-Installation instructions are provided for Windows 10. Multiple software need to
-be installed including `Docker` for Windows.
+Installation instructions are provided for Windows 10. Multiple software need
+to be installed including `Docker` for Windows.
 """
 usage = """
 Usage instructions consist of Python code and command line examples that
@@ -50,10 +52,14 @@ the workflow is not provided.
 
 [capabilities]
 based_on_documentation = """
-The reference article and repository `README.md` describe a workflow from
-CT scan images to fracture and flow modelling. End results of the modelling incluce fracture network and permeability visualizations and tensors of permeability (Figure @fig:cttodfm_permeability_tensors).
+The reference article and repository `README.md` describe a workflow from CT
+scan images to fracture and flow modelling. End results of the modelling
+incluce fracture network and permeability visualizations and tensors of
+permeability (Figure @fig:cttodfm_permeability_tensors).
 
-![Permeability tensors produced as an end product of `CTtoDFM` flow modelling. Image from @ferreira_computed-tomography-based_2023.](src/images/cttodfm_permeability_tensors.jpg){#fig:cttodfm_permeability_tensors}
+![Permeability tensors produced as an end product of `CTtoDFM` flow modelling.
+Image from
+@ferreira_computed-tomography-based_2023.](src/images/cttodfm_permeability_tensors.jpg){#fig:cttodfm_permeability_tensors}
 """
 based_on_testing = """
 """
