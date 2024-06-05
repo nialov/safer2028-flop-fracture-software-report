@@ -92,7 +92,7 @@ DFN.dfn_flow()
 DFN.dfn_trans()
 ~~~
 
-To subsequently run the `driver.py` file from the command-line:
+To subsequently run the `driver.py` file from the command line:
 
 ~~~bash
 python driver.py

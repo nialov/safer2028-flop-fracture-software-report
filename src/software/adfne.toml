@@ -46,7 +46,7 @@ updates will be released openly is unknown.
 
 `Matlab` is a commercial application, and use of *ADFNE* therefore requires a paid
 `Matlab` license. The possibility to run *ADFNE* through *GNU Octave*, a free and
-open-source `Matlab` alternative, is mentioned but not demonstrated.
+open source `Matlab` alternative, is mentioned but not demonstrated.
 
 The custom license allows redistribution in source and binary formats provided
 that the software is cited and the same copyright notice is distributed.

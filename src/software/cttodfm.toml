@@ -38,7 +38,7 @@ Installation instructions are provided for Windows 10. Multiple software need to
 be installed including `Docker` for Windows.
 """
 usage = """
-Usage instructions consist of Python code and command-line examples that
+Usage instructions consist of Python code and command line examples that
 describe the workflow from CT scans to modelling (Figure
 @fig:cttodfm_workflow). The workflow uses multiple software to get to the end
 result i.e. the process is somewhat complex and manual.

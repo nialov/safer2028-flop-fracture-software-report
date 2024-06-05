@@ -1,6 +1,6 @@
 name = "DFM Generator"
 authors = ["Michael Welsch", "Mikael Lüthje"]
-interface = "Command-line"
+interface = "Command line"
 input_data = """
 The model is defined using plain text configuration files. The variables that
 the user can (and must) define are the grid geometry, stress state, fracture

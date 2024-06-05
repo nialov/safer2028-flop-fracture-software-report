@@ -7,7 +7,7 @@ authors = [
 interface = "`C++` and `Matlab` code"
 input_data = """
 The parameters for fracture generation are defined in `C++` code by the
-user. For the length distributions of the fractures, power-law distribution options
+user. For the length distributions of the fractures, power law distribution optionslaw distribution options
 are the best documented. 
 """
 outputs = """
