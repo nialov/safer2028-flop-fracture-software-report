@@ -1,3 +1,17 @@
+# Cover image
+
+![Illustration of the workflow from fracture characterization to
+modelling. Focus of the report is on three-dimensional fracture, flow
+and transport modelling. Two-dimensional fracture characterization
+images from `fractopo` [@ovaskainen_fractopo_2023] documentation.
+Three-dimensional fracture modelling images, top to bottom: `frackit`
+documentation [@glaser_frackit_2020] and `ADFNE` documentation
+[@fadakar_alghalandis_adfne_2017], respectively. Flow and transport
+modelling images, top to bottom: `dfnWorks` documentation
+[@hyman_dfnworks_2015] and `CTtoDFM` article
+[@ferreira_computed-tomography-based_2023],
+respectively.](src/images/report_cover.drawio.png)
+
 # Abstract (English)
 
 {{ abstract_english }}
