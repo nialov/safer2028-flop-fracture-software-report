@@ -3107,6 +3107,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-pandoc": {
+      "locked": {
+        "lastModified": 1653936696,
+        "narHash": "sha256-M6bJShji9AIDZ7Kh7CPwPBPb/T7RiVev2PAcOi4fxDQ=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "ce6aa13369b667ac2542593170993504932eb836",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "22.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-petsc": {
       "locked": {
         "lastModified": 1688556768,
@@ -4077,7 +4093,8 @@
         "nixpkgs": [
           "nix-extra",
           "nixpkgs"
-        ]
+        ],
+        "nixpkgs-pandoc": "nixpkgs-pandoc"
       }
     },
     "rust-overlay": {

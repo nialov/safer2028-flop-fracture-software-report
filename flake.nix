@@ -9,6 +9,7 @@
       url = "github:ryangrose/easy-pandoc-templates";
       flake = false;
     };
+    nixpkgs-pandoc = { url = "github:nixos/nixpkgs/22.05"; };
   };
 
   outputs = inputs:

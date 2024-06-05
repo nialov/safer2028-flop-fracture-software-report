@@ -7,8 +7,18 @@
           import nixpkgs {
             inherit system;
             overlays = let
-              pandocXnosOverlay = _: prev: {
+              nixpkgsPandoc = import inputs.nixpkgs-pandoc { inherit system; };
+              pandocXnosOverlay = final: prev: {
+                inherit (nixpkgsPandoc) pandoc;
 
+                pandoc-xnos-merged = prev.symlinkJoin {
+                  name = "pandoc-xnos-merged";
+                  paths = lib.attrValues {
+                    inherit (final)
+                      pandoc-fignos pandoc-eqnos pandoc-secnos pandoc-tablenos;
+                    inherit (final.python3Packages) pandoc-xnos;
+                  };
+                };
                 pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [
                   (_: pythonPrev: {
 
@@ -47,8 +57,8 @@
             buildInputs = lib.attrValues {
 
               inherit (pkgs)
-                fd parallel toml2json miniserve watchexec pandoc pandoc-fignos
-                pandoc-eqnos pandoc-secnos pandoc-tablenos gdal;
+                fd parallel toml2json miniserve watchexec pandoc
+                pandoc-xnos-merged gdal;
               inherit (pkgs.texlive.combined) scheme-medium;
               python3WithPackages = pkgs.python3.withPackages (p:
                 lib.attrValues {
@@ -81,7 +91,7 @@
             '';
           };
           inherit (pkgs.python3Packages) pandoc-xnos;
-          inherit (pkgs) pandoc-fignos;
+          inherit (pkgs) pandoc-fignos pandoc-xnos-merged;
         };
 
         pre-commit = {
