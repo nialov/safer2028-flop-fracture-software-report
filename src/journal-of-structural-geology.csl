@@ -41,7 +41,7 @@
   </macro>
   <macro name="author">
     <names variable="author">
-      <name name-as-sort-order="all" sort-separator=", " initialize-with="." delimiter=", " delimiter-precedes-last="always"/>
+      <name name-as-sort-order="all" sort-separator=", " initialize-with="." delimiter=", " delimiter-precedes-last="never" and="symbol"/>
       <label form="short" prefix=" (" suffix=")" text-case="capitalize-first"/>
       <substitute>
         <names variable="editor"/>
@@ -63,8 +63,11 @@
   <macro name="access">
     <choose>
       <if variable="DOI">
-        <text variable="DOI" prefix="https://doi.org/"/>
+        <text variable="DOI" prefix="Available at: https://doi.org/"/>
       </if>
+      <else-if variable="URL">
+        <text variable="URL" prefix="Available at: "/>
+      </else-if>
       <else-if type="webpage">
         <group delimiter=" ">
           <text value="URL"/>
@@ -180,7 +183,7 @@
       </else-if>
     </choose>
   </macro>
-  <citation et-al-min="3" et-al-use-first="1" disambiguate-add-givenname="true" disambiguate-add-year-suffix="true" collapse="year" cite-group-delimiter=", ">
+  <citation et-al-min="3" et-al-use-first="1" disambiguate-add-givenname="false" disambiguate-add-year-suffix="true" collapse="year" cite-group-delimiter=", ">
     <sort>
       <key macro="issued" sort="ascending"/>
       <key macro="author"/>
@@ -203,7 +206,7 @@
     </sort>
     <layout>
       <group suffix="." delimiter=". ">
-        <group delimiter=", ">
+        <group delimiter=" ">
           <text macro="author"/>
           <text macro="issued"/>
         </group>
