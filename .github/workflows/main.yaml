@@ -48,13 +48,13 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           # Upload folder with static docs
-          path: "outputs/safer2028-flop-fracture-software-report/html/"
+          path: "outputs/report/html/"
       - uses: actions/upload-artifact@v4
         with:
           name: report
           path: |
-            outputs/safer2028-flop-fracture-software-report/report.pdf
-            outputs/safer2028-flop-fracture-software-report/report.docx
+            outputs/report/report.pdf
+            outputs/report/report.docx
       # - uses: actions/configure-pages@v5
       # - id: deployment
       #   uses: actions/deploy-pages@v4
