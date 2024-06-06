@@ -6,12 +6,12 @@ fractures where they can not be empirically detected. Depending on the use case,
 such as for safety cases in nuclear waste disposal, it is important to consider
 both the suitability of the software used for modelling and the future
 availability of the software. It is uncertain whether proprietary,
-i.e., paid software, will be available far into the future, as the company behind the
-software has control over its use.
+i.e., paid software, will be available far into the future, as the company
+behind the software has control over its use.
 
 For this purpose, this report provides a state of the field for free and
 open source three-dimensional fracture modelling software, with a focus on
-DFN-modelling. In total, this report reviews TODO software, and gathers
+DFN-modelling. In total, this report reviews seven software, and gathers
 information on the documentation, installation and practical usage of the
 software. The software programs vary in terms of their focus, as some have only
 been built to serve a very specific modelling purpose, such as `Pychan3d` for

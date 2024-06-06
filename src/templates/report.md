@@ -178,7 +178,7 @@ example, for a single article and only released in an appendix format. As
 a recommendation for further software releases, the release of the source on
 a version control platform, such as *GitHub* or *Gitlab*, guarantees better
 discoverability by future researchers. Due to these criteria, this review only
-includes TODO software. A larger sample of software would have been useful to
+includes seven software. A larger sample of software would have been useful to
 further increase the applicability of this report, but it nonetheless fulfils
 the goal of demonstrating the current quantity and state of free and
 open source 3D fracture characterization software. The criteria for being free
