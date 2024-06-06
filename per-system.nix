@@ -64,7 +64,7 @@
                 lib.attrValues {
                   inherit (p)
                     typer jsonschema tomli ipython jinja2 j2cli jupyterlab
-                    pandas openpyxl tabulate;
+                    pandas openpyxl tabulate bibtexparser;
                 });
 
             };
