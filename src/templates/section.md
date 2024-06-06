@@ -15,6 +15,10 @@ Authors:
 -   {{ author }}
 {% endfor %}
 
+### Capabilities
+
+{{ capabilities.based_on_documentation }}
+
 ### Data 
 
 #### Input data
@@ -38,10 +42,6 @@ Authors:
 #### Examples
 
 {{ state_of_documentation.examples }}
-
-### Capabilities
-
-{{ capabilities.based_on_documentation }}
 
 ### Remarks
 
