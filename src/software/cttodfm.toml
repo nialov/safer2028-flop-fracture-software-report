@@ -55,7 +55,7 @@ based_on_documentation = """
 The reference article and repository `README.md` describe a workflow from
 computer tomography (CT)
 scan images to fracture and flow modelling. End results of the modelling
-incluce fracture network and permeability visualizations and tensors of
+include fracture network and permeability visualizations and tensors of
 permeability (Figure @fig:cttodfm_permeability_tensors).
 
 ![Permeability tensors produced as an end product of `CTtoDFM` flow modelling.

@@ -60,7 +60,7 @@ disposal, this causes a possible risk in terms of the future review of
 the results as due to the software potentially no longer being
 available, licensing issues or a lack of knowledge of the specific
 methods the software uses for modelling [@geier_assessment_2012]. Better
-reproducibility and comparability between models is guaranteed by having
+reproducibility and comparability between models are guaranteed by having
 an open software source. However, open source software must still be
 properly documented including how to install it, how to run it and any
 other details needed to reproduce results. The licenses of open source

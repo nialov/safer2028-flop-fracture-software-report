@@ -20,7 +20,7 @@ Due to using a dynamic fracture growth model, the output models are probably
 more geologically realistic than more static fracture generators.
 Installation, and subsequent testing, is easy on Windows due to the authors
 providing a standalone executable. The concepts implemented in the software are
-introduced in @welch_modelling_2020. The software receices updates, with
+introduced in @welch_modelling_2020. The software receives updates, with
 the latest in 2024.
 """
 license = "Apache-2.0"
@@ -64,7 +64,7 @@ based_on_documentation = """
 The purpose of `DFM Generator` is to generate geologically realistic models of
 fracture networks. The software achieves this by using a dynamic model, in
 which fractures can interact with each other during growth and, for example,
-stop growing as one fracture reaches another. This dynamic modelling method constrasts
+stop growing as one fracture reaches another. This dynamic modelling method contrasts
 with more static modelling, where fractures are grown without regard for each other.
 
 The options for input and model parametrization are more advanced when using

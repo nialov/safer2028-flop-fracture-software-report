@@ -15,7 +15,7 @@ constant, can be defined and the relevant parameters can be given, e.g., alpha
 [@sanderson_use_2015] value can be given that is used to define the stop
 condition for fracture network generation. Overall, the input options for
 fracture generation (`dfnGen`) are
-numerous and defined in text files, usually with a `inp` extension alongside
+numerous and defined in text files, usually with an `inp` extension alongside
 text files with `dat` extension that are, e.g., used to define geometries used in
 fracture generation.
 
