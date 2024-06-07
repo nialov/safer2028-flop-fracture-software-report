@@ -38,11 +38,11 @@ interpreted language, the results are available after code execution as `Matlab`
 variables.
 """
 remarks = """
-The availability of the software has changed over the years. The first version was
-released free and open source on *GitHub* but later versions have been behind a
-request to the author. Currently, version 1.5 is again freely available on
-*GitHub* (<https://github.com/AlghalandisComputing/ADFNE1.5>). Whether further
-updates will be released openly is unknown.
+The availability of the software has changed over the years. The first version
+was released free and open source on *GitHub* but later versions have only been
+available upon a request to the author. Currently, version 1.5 is again freely
+available on *GitHub* (<https://github.com/AlghalandisComputing/ADFNE1.5>).
+Whether further updates will be released openly is unknown.
 
 `Matlab` is a commercial application, and use of *ADFNE* therefore requires a paid
 `Matlab` license. The possibility to run *ADFNE* through *GNU Octave*, a free and
@@ -84,7 +84,7 @@ very intensive.
 
 [capabilities]
 based_on_documentation = """
-The fracture modelling type is the discrete fracture network method. The
+`ADFNE` is designed for discrete fracture network modelling. The
 software is capable of both generating the fracture network and simulating flow
 within the generated 2D or 3D network. Furthermore, it contains a number of
 methods to characterize the generated network, e.g., with a stereonet. The

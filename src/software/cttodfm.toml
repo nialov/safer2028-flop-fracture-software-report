@@ -20,11 +20,11 @@ files (`txt`).
 """
 remarks = """
 `CTtoDFM` is specialized for the creation of integrated discrete
-fracture-matrix models based on 3D computer tomography (CT) scan images (`tiff`
-files) of rock volumes. Consequently, it is not useful for general scenarios of
-e.g. DFN-modelling but rather for cases where CT scanning rock samples is
-possible. Use of the software requires `Rhinoceros 4.0` and `Ansys ICEM CFD`
-i.e. while the code is open, using it fully requires proprietary licenses.
+fracture-matrix models based on 3D CT scan images (`tiff` files) of rock
+volumes. Consequently, it is not useful for general scenarios of, e.g.,
+DFN-modelling but rather for cases where CT scanning of rock samples is
+possible. Use of the software requires `Rhinoceros 4.0` and `Ansys ICEM CFD`,
+i.e., while the code is open, using it fully requires proprietary licenses.
 """
 license = "Unknown"
 
@@ -36,14 +36,14 @@ forum = ""
 
 [state_of_documentation]
 installation = """
-Installation instructions are provided for Windows 10. Multiple software need
-to be installed including `Docker` for Windows.
+Installation instructions are provided for Windows 10. Multiple software
+programs need to be installed including `Docker` for Windows.
 """
 usage = """
 Usage instructions consist of Python code and command line examples that
 describe the workflow from CT scans to modelling (Figure
-@fig:cttodfm_workflow). The workflow uses multiple software to get to the end
-result i.e. the process is somewhat complex and manual.
+@fig:cttodfm_workflow). The workflow uses multiple software programs to reach
+the end result, i.e., the process is somewhat complex and manual.
 """
 examples = """
 The repository `README.md` describes an example workflow but the input data for
@@ -52,7 +52,8 @@ the workflow is not provided.
 
 [capabilities]
 based_on_documentation = """
-The reference article and repository `README.md` describe a workflow from CT
+The reference article and repository `README.md` describe a workflow from
+computer tomography (CT)
 scan images to fracture and flow modelling. End results of the modelling
 incluce fracture network and permeability visualizations and tensors of
 permeability (Figure @fig:cttodfm_permeability_tensors).

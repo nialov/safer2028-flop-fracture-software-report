@@ -64,8 +64,8 @@ based_on_documentation = """
 The purpose of `DFM Generator` is to generate geologically realistic models of
 fracture networks. The software achieves this by using a dynamic model, in
 which fractures can interact with each other during growth and, for example,
-stop growing as one fracture reaches another. This is in contrast to more
-static modelling, where fractures are grown without regard for each other.
+stop growing as one fracture reaches another. This dynamic modelling method constrasts
+with more static modelling, where fractures are grown without regard for each other.
 
 The options for input and model parametrization are more advanced when using
 the software within *Petrel*, a geomodelling package from SLB (formerly
