@@ -55,6 +55,6 @@ jobs:
           path: |
             outputs/report/report.pdf
             outputs/report/report.docx
-      # - uses: actions/configure-pages@v5
-      # - id: deployment
-      #   uses: actions/deploy-pages@v4
+      - uses: actions/configure-pages@v5
+      - id: deployment
+        uses: actions/deploy-pages@v4
