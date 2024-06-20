@@ -9,10 +9,10 @@ jobs:
     runs-on: ${{ matrix.platform }}
     timeout-minutes: 45
     steps:
-      - uses: actions/checkout@v4
-      - uses: DeterminateSystems/nix-installer-action@v9
-      - uses: DeterminateSystems/magic-nix-cache-action@v4
-      - uses: cachix/cachix-action@v13
+      - uses: actions/checkout@v4.1.7
+      - uses: DeterminateSystems/nix-installer-action@v12
+      - uses: DeterminateSystems/magic-nix-cache-action@v7
+      - uses: cachix/cachix-action@v15
         with:
           name: nialov
       - name: Check with nix
@@ -36,20 +36,20 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: DeterminateSystems/nix-installer-action@v9
-      - uses: DeterminateSystems/magic-nix-cache-action@v4
-      - uses: cachix/cachix-action@v13
+      - uses: actions/checkout@v4.1.7
+      - uses: DeterminateSystems/nix-installer-action@v12
+      - uses: DeterminateSystems/magic-nix-cache-action@v7
+      - uses: cachix/cachix-action@v15
         with:
           name: nialov
       - name: Build documentation
         run: |
           nix run .#build
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3.0.1
         with:
           # Upload folder with static docs
           path: "outputs/report/html/"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4.3.3
         with:
           name: report
           path: |
@@ -57,4 +57,4 @@ jobs:
             outputs/report/report.docx
       - uses: actions/configure-pages@v5
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4.0.5
