@@ -91,8 +91,11 @@
             '';
           };
           inherit (pkgs.python3Packages) pandoc-xnos;
-          inherit (pkgs) pandoc-fignos pandoc-xnos-merged;
+          inherit (pkgs) pandoc-xnos-merged;
         };
+
+        checks = self'.packages;
+        legacyPackages = pkgs;
 
         pre-commit = {
           check.enable = true;
